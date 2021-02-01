@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+body{
+    margin: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav.navbar
+{
+    background: linear-gradient(to top, rgb(255, 255, 255), rgb(253, 249, 249));
+    padding: 6px 0px 0px 0px;
+    display: block;
+    position: relative;
+    width: 100%;
+}
+.navbar a:hover
+{
+    color: rgb(214, 79, 231);
+}
+
+ul 
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+  
+  li 
+{
+    float: left;
+}
+
+li.title a
+{
+    font-family: serif;
+    font-size: 30pt;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    margin-left: 20px;
+    margin-right: 60px;
+    color: rgb(011, 073, 232);
+    
+}
+  
+li a   
+{
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 25px 16px;
+    text-decoration: none;
+    font-size: 14pt;
+}
+
+
+footer
+{
+
+    bottom: -10px;
+    width: 99%;
+    padding-top: 10px;
+    padding-left: 1%;
+    padding-bottom: 10px;
+    background: linear-gradient(to  left, rgb(011,073,216), rgb(175,043,248));
+    color: white;
+    font-size: 10pt;
+    
+}
+
+footer h1 a{
+    text-decoration: none;
+    color: white;
+    font-size: 14pt;
+}
+
+footer div#a{
+    display: inline-block;
+}
+
+footer div#b{
+    display: inline-block;
+    
+}
+
+main.conteudo
+{
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+div.bt{
+    float: right;
+    margin-right: 10%;
+}
+
+button.cadastro {
+    display: block;
+    background: #2360FE;
+    border: 0;
+    border-style: groove;
+    border-radius: 5px;
+    padding: 7px 10px;
+    font-size: 16pt;
+    color: white;
+}
+button.entrar {
+    background: white;
+    border: #CCCBfA;
+    border-style: groove;
+    border-radius: 5px;
+    padding: 5px 30px;
+    font-size: 16pt;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+div.top-desing{
+    padding: 30%;
+    background-image: url(../imagens/vectors/pexels-pixabay-35550.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    padding-top: 10%;
+}
+
+footer div{
+    display: inline;
+}
+
+footer p#a{
+    font-size: 14pt;
+}
+
+footer div#b{
+    display: inline;
+}
+div#cate{
+    text-align: center;
+    width: 100%;
+    margin-top: 10%;
+}
+
+button#cat{
+   
+    margin: 3%;
+    padding: 6%;
+    text-align: center;
+    width: 11%;
+}
+
+
+button.cat1{
+    background-color: rgb(138, 084, 253);
+    
+    background-image: url(../imagens/vectors/party.svg);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+       
+}
+
+button.cat2{
+    background-color: rgb(255, 222, 051);
+
+    background-image: url(../imagens/vectors/dress.svg);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button.cat3{
+    background-color: rgb(226, 66, 182);
+
+    background-image: url(../imagens/vectors/maintenance.svg);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button.cat4{
+    background-color: rgb(236, 80, 70) ;
+
+    background-image: url(../imagens/vectors/homework.svg);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button.cat5{
+    background-color: rgb(084, 248, 218) ;
+
+    background-image: url(../imagens/vectors/healthcare.svg);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button.cat6{
+    background-color: rgb(253, 084, 115) ;
+
+    background-image: url(../imagens/vectors/suporte-tecnico.svg);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button.cat7{
+    background-color: rgb(084, 253, 101) ;
+
+    background-image: url(../imagens/vectors/analysis.svg);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+hr#div{
+    width: 80%;
+}
+
+h1#oq{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 4%;
+}
+
+div#textbox1{
+    margin-left: 20%;
+    margin-right:20%;
+    text-align: center;
+}
+
+div#textbox2{
+    
+    background-image: url(../imagens/vector1.png);
+    background-position: left;
+    background-size: 30%;
+    background-repeat: no-repeat;
+    margin-left: 10%;
+    text-align: left; 
+    padding: 4%;  
+    
+}
+
+div#textbox3{
+    background-image: url(../imagens/vector2.png);
+    background-position: right;
+    background-size: 26%;
+    background-repeat: no-repeat;
+    margin-right: 10%;
+    text-align: right;
+    padding: 4%;
+}
+
+div#textbox4{
+    background-image: url(../imagens/vector3.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 25%;
+    margin-left: 10%;
+    text-align: left;
+    padding: 5%;
+}
+
+div.textbox img{
+    display: inline-block;
+}
+div.text{
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+
+

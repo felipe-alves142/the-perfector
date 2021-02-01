@@ -1,0 +1,111 @@
+html{
+    background: linear-gradient(to bottom, #F04E4D,  #FA2249) ;
+    height: 100%;
+    color: white;
+}
+nav#escolha {
+    padding: auto;
+    width: 100%;
+    
+}
+nav#escolha div{
+    display: inline-flex;
+
+    position: relative;
+    text-align: center;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 16pt;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav#escolha:hover{
+    cursor: pointer;
+}
+nav#escolha div#ativo{
+    background-color: #F93849;
+}
+
+form{
+    margin-top: 20px;
+    margin-left: 10% ;
+    margin-right: 10%;
+}
+
+div#EC{
+    display: inline-block;
+    margin-left: 10%;
+}
+div#EC input{
+    display: block;
+    font-size: 14pt;
+    padding: 4pt;
+    width: 100%;
+    border-radius: 5px;
+    border-width: 0px;
+    margin-bottom: 20px; 
+   
+}
+
+div#DP {
+    display: inline-block;
+    margin-left: 20%;
+}
+
+div#DP input{
+    display: block;
+    font-size: 14pt;
+    padding: 4pt;
+    width: 100%;
+    border-radius: 5px;
+    border-width: 0px;
+    margin-bottom: 20px;
+}
+
+div#ES{
+    display: inline-block;
+    margin-left: 10%;
+}
+
+div#ES input{
+    display: block;
+    font-size: 14pt;
+    padding: 4pt;
+    width: 100%;
+    border-radius: 5px;
+    border-width: 0px;
+    margin-bottom: 20px; 
+}
+
+div#TC{
+    display: inline-block;
+    margin-left: 16%;
+    position: absolute;
+}
+
+div#TC input{
+    display: block;
+    font-size: 14pt;
+    padding: 4pt;
+    width: 100%;
+    border-radius: 5px;
+    border-width: 0px;
+    margin-bottom: 20px;
+}
+
+input#bt{
+    background-color: #0B49D8;
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+    padding: 10px 30px;
+    font-size: 14pt;
+    margin-left: 40%;
+}
+
+form label#state{
+    color: white;
+}
