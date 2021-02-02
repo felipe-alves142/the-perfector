@@ -1,3 +1,13 @@
+///Validar o E-mail
+// validar a senha
+// validar a confirmanção da senha
+// validar o nome
+// validar o cpf
+// validar a data
+// validar celular
+
+
+
 function validar(){
     var estado =document.getElementById("state").value
     var cidade =document.getElementById("city").value
@@ -35,8 +45,8 @@ function validar(){
         document.getElementById("rtelefone").innerHTML="Telefone Inválido!"
 
     }
-    if(celular == ""){
-        document.getElementById("rcelular").innerHTML="Celular Inválido!"
-    }
+        if(celular == ""){
+            document.getElementById("rcelular").innerHTML="Celular Inválido!"
+        }
 
 }

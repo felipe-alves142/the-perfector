@@ -7,7 +7,7 @@
     <title>The Perfector</title>
     <link rel="stylesheet" href="../styles/login.cliente.css">
     <link rel="shortcut icon" href="../imagens/logo-icon.svg" type="image/x-icon"> 
-    <script src="cadastro.js"></script>
+    <script src="cadastro.js"></script>    
 </head>
 
 <body>
@@ -15,6 +15,7 @@
     <nav id="escolha">
         <div id="ativo">cliente</div>
         <div id="nulo" onclick="empresa()">Empresa/Prestador</div>
+            
     </nav>
 
     <div id="formulario">
@@ -75,7 +76,7 @@
         </div>
         <br>
 
-        <input type="submit" value="Cadastrar" id="bt" onclick="return validar()">
+        <input type="submit" value="Cadastrar" id="bt" onclick="validar()">
         
     </form>
 
@@ -86,10 +87,12 @@
 
 
     <script id="tira">
+        
         function empresa() {
             document.getElementById("escolha").innerHTML='<div id="nulo" onclick="cliente()">cliente</div><div id="ativo">Empresa/Prestador</div>';
-
+     
             document.getElementById("formulario").innerHTML='<form action="cadastra.php" id="empresa" method="POST"><div id="EC"><label for="companyState">Estado</label><input type="text" name="companyState" id="companyState" required> <label for="companyCity ">Cidade</label><input type="text" name="companyCity" id="companyCity" required></div><div id="DP"><label for="nameCompany">Nome Empresa</label><input type="text" name="nameCompany" id="nameCompany" required><label for="idCompany">CNPJ</label><input type="text" name="idCompany" id="idCompany" required></div><hr><div id="ES"><label for="emailCompany">E-mail</label><input type="email" name="emailCompany" id="emailCompany" required><label for="password">Senha</label><input type="password" name="password" id="password" required><label for="passwordOne">Confirme a senha</label><input type="number" name="passwordOne" id="passwordOne" required></div><div id="TC"><label for="tlfCompany">Telefone</label><input type="number" name="tlfCompany" id="tlfCompany" required><label for="cllCompany">Celular</label><input type="number" name="cllCompany" id="cllCompany" required></div><br><input type="submit" value="Cadastrar" id="bt"></form>';
+            
         }
         function cliente() {
             document.getElementById("escolha").innerHTML='<div id="ativo">cliente</div><div id="nulo" onclick="empresa()">Empresa/Prestador</div>';
@@ -97,6 +100,7 @@
 
             document.getElementById("formulario").innerHTML='<form action="cadastra.cliente.php" id="pessoaFisica" method="POST"><div id="EC"><label for="state">Estado</label><input type="text" name="state" id="state" required><label for="city">Cidade</label><input type="text" name="city" id="city" required></div><div id="DP"><label for="name">Nome completo</label><input type="text" name="name" id="name" required><label for="cpf">CPF</label><input type="text" name="cpf" id="cpf" class="cpf-mask" placeholder="Ex.: 000.000.000-00" required><label for="date">Data de nascimento</label><input type="date" name="date" id="date" required></div><hr><div id="ES"><label for="email">E-mail</label><input type="email" name="email" id="email" required><label for="password">Senha</label><input type="password" name="password" id="password" required><label for="passwordOne">Confirme a senha</label><input type="number" name="passwordOne" id="passwordOne" required></div><div id="TC"><label for="tlf">Telefone</label><input type="number" name="tlf" id="tlf" required>label for="cll">Celular</label><input type="number" name="cll" id="cll" required></div><br><input type="submit" value="Cadastrar" id="bt"></form>';
         }
+        
     </script>
    
 
