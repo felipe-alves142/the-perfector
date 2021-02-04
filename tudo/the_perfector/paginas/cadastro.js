@@ -25,7 +25,7 @@ function validar(){
     }
     if(senha == ""){
         document.getElementById("rsenha").innerHTML="Senha Inválida!"
-}
+    }   
     if(confsenha != senha){
         document.getElementById("rcsenha").innerHTML="Senhas São Desiguais!"
     }
@@ -39,8 +39,29 @@ function validar(){
         document.getElementById("rcpf").innerHTML="CPF Invalido!"
     }
     if(email == ""){
-        document.getElementById("remail").innerHTML="Email Inválido!"
-    }
+    document.getElementById("remail").innerHTML="Email Inválido!"
+    function validateEmail(email) {
+        const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+      }
+      
+      function validate() {
+        const $result = $("#remail");
+        const email = $("#email").val();
+        $result.text("");
+      
+        if (validateEmail(email)) {
+          $result.text("Email Valido!");
+          
+        } else {
+          $result.text("Email não Valido!");
+        }
+        return false;
+      }
+      
+      $("#validate").on("click", validate);
+      
+}
     if(telefone == ""){
         document.getElementById("rtelefone").innerHTML="Telefone Inválido!"
 

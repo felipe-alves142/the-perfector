@@ -7,7 +7,8 @@
     <title>The Perfector</title>
     <link rel="stylesheet" href="../styles/login.cliente.css">
     <link rel="shortcut icon" href="../imagens/logo-icon.svg" type="image/x-icon"> 
-    <script src="cadastro.js"></script>    
+    <script src="cadastro.js"></script> 
+
 </head>
 
 <body>
@@ -55,6 +56,7 @@
             <label for="email">E-mail</label>
             <input type="email" name="email" id="email" required>
             <div id="remail"></div><br>
+            
             <label for="password">Senha</label>
             <input type="password" name="password" id="password" required>
             <div id="rsenha"></div><br>
@@ -75,13 +77,15 @@
             <div id="rcelular"></div>
         </div>
         <br>
-
+        <div id='validate'>
         <input type="submit" value="Cadastrar" id="bt" onclick="validar()">
+        </div>
+
+
         
     </form>
 
     </div>
-
 
 
 
