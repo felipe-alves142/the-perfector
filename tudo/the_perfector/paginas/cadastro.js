@@ -1,3 +1,4 @@
+
 ///Validar o E-mail
 // validar a senha
 // validar a confirmanção da senha
@@ -5,29 +6,27 @@
 // validar o cpf
 // validar a data
 // validar celular
-
-
-
 function validar(){
     var estado =document.getElementById("state").value
     var cidade =document.getElementById("city").value
     var nome =document.getElementById("name").value
-    var cpf =document.getElementById("cpf").value
+    document.getElementById("cpf").addEventListener('input' ,function(){vcpf()})
     var data =document.getElementById("date").value
     var email =document.getElementById("email").value
     var senha =document.getElementById("password").value
     var confsenha =document.getElementById("passwordOne").value
-    var telefone =document.getElementById("tlf").value
+    var telefone =document.getElementById("tlf").addEventListener('input',function(){te()})
     var celular =document.getElementById("cll").value
+    
     if(nome == ""){
         document.getElementById("rnome").innerHTML="Nome Inválido!"
 
     }
-    if(senha == ""){
+    if(senha == "" | senha.length < 8){
         document.getElementById("rsenha").innerHTML="Senha Inválida!"
     }   
     if(confsenha != senha){
-        document.getElementById("rcsenha").innerHTML="Senhas São Desiguais!"
+        document.getElementById("rcsenha").innerHTML="Senhas são Desiguais!"
     }
     if(estado == ""){
         document.getElementById("restado").innerHTML="Estado Inválido!"
@@ -35,9 +34,11 @@ function validar(){
     if(cidade == ""){
         document.getElementById("rcidade").innerHTML="Cidade Inválida!"
     }
-    if(cpf == ""){
-        document.getElementById("rcpf").innerHTML="CPF Invalido!"
-    }
+    function vcpf(){
+        //cm = cpf.value[12] * cpf.value[13]
+    
+     }
+    
     if(email == ""){
     document.getElementById("remail").innerHTML="Email Inválido!"
     function validateEmail(email) {
@@ -61,13 +62,15 @@ function validar(){
       
       $("#validate").on("click", validate);
       
-}
-    if(telefone == ""){
-        document.getElementById("rtelefone").innerHTML="Telefone Inválido!"
-
     }
+    function te(){
+    
+}
+
         if(celular == ""){
             document.getElementById("rcelular").innerHTML="Celular Inválido!"
+            
         }
-
-}
+        
+    
+    }
