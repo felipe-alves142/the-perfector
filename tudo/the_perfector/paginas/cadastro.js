@@ -6,11 +6,13 @@
 // validar o cpf
 // validar a data
 // validar celular
+    
 function validar(){
+    document.getElementById('bt').addEventListener('click' , vcpf())
     var estado =document.getElementById("state").value
     var cidade =document.getElementById("city").value
     var nome =document.getElementById("name").value
-    document.getElementById("cpf").addEventListener('input' ,function(){vcpf()})
+    document.getElementById("cpf") //.addEventListener('input' ,function(){vcpf()})
     var data =document.getElementById("date").value
     var email =document.getElementById("email").value
     var senha =document.getElementById("password").value
@@ -35,8 +37,17 @@ function validar(){
         document.getElementById("rcidade").innerHTML="Cidade Inválida!"
     }
     function vcpf(){
-        //cm = cpf.value[12] * cpf.value[13]
-    
+        let sum = Number(cpf.value[0])+ Number(cpf.value[1])+Number(cpf.value[2])+Number(cpf.value[4])+Number(cpf.value[5])+Number(cpf.value[6])+Number(cpf.value[8])+Number(cpf.value[9])+Number(cpf.value[10])+Number(cpf.value[12])+Number(cpf.value[13]) 
+        console.log(sum)
+        
+        let c= String(sum)
+        console.log(cpf.value[10])
+        
+        if(c.length == 2 && c[0] == c[1]){
+           document.getElementById('rcpf').innerHTML = 'Cpf valido'
+        }else{
+            document.getElementById('rcpf').innerHTML = 'Cpf invalido'    
+        }
      }
     
     if(email == ""){
@@ -63,9 +74,6 @@ function validar(){
       $("#validate").on("click", validate);
       
     }
-    function te(){
-    
-}
 
         if(celular == ""){
             document.getElementById("rcelular").innerHTML="Celular Inválido!"
