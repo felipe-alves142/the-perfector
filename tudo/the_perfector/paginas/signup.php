@@ -22,7 +22,7 @@
     <main>  
 
         <h2>Cadastro</h2>
-        <form action="../paginas/includes/signup.inc.php" method="post">
+        <form action="includes/signup.inc.php" method="post">
             <p for="usuario">Usuário</p>
                 <br>
             <input type="text" name="usuario" placeholder="Usuário">     
@@ -35,7 +35,7 @@
             <p for="senha">Senha</p>
                 <br>
             <input type="password" name="senha" placeholder="Senha">
-            <input type="senha" name="repSenha" placeholder="Repita a Senha">
+            <input type="password" name="repSenha" placeholder="Repita a Senha">
             <br>
             <input type="submit"  name="submit" value="Cadastrar" id="b">
             

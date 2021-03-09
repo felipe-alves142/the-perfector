@@ -10,15 +10,29 @@ if (isset($_POST["submit"])){
     require_once 'functions.inc.php';
 
 
-    //if(emptyInputSignup() !== false){
-
-    //}
+    if(emptyInputSignup($user,$senha,$repsenha,$email) !== false){
+        header("location: ../signup.php?error=emptyinput");
+        exit();
+    }   
+    if(invalidUid($user) !== false){
+        header("location: ../signup.php?error=emptyuid");
+        exit();
+    }
+    if(invalidEmail($email) !== false){
+        header("location: ../signup.php?error=emptyemail");
+        exit();
+    }
+    if(senhaIgual($senha,$repsenha) !== false){
+        header("location: ../signup.php?error=emptypass");
+        exit();
+    }
+    if(dadoVa($conn,$user,$email)!==false){
+        header("location: ../signup.php?error=emptypass");
+        exit(); 
+    }
+    createUser($conn,$email,$user,$senha);
 }
-else{
-    header('Location: ../paginas/signup.php');
-    exit;
-
-
+else {
+    header("location: ../signup.php");
+    exit();
 }
-
-?>

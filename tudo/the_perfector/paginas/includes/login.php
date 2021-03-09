@@ -20,7 +20,7 @@
 
     <main>
         <h2>Login</h2>
-        <form action="../paginas/includes/login.inc.php" method="post">
+        <form action="includes/login.inc.php" method="post">
             <p for="usuario">Usuário</p>
                 <br>
             <input type="text" name="usuario" placeholder="Usuário/Email">     
