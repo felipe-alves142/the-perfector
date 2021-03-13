@@ -11,7 +11,7 @@ if (isset($_POST["submit"])){
 
 
     if(emptyInputSignup($user,$senha,$repsenha,$email) !== false){
-        header("location: ../signup.php?error=emptyinput");
+        header("location: ../signup.php?error=Campovazio");
         exit();
     }   
     if(invalidUid($user) !== false){
@@ -19,14 +19,14 @@ if (isset($_POST["submit"])){
         exit();
     }
     if(invalidEmail($email) !== false){
-        header("location: ../signup.php?error=emptyemail");
+        header("location: ../signup.php?error=emailinvalido");
         exit();
     }
     if(senhaIgual($senha,$repsenha) !== false){
         header("location: ../signup.php?error=emptypass");
         exit();
     }
-    if(dadoVa($conn,$user,$email)!==false){
+    if(uidExist($conn,$user,$email)!==false){
         header("location: ../signup.php?error=emptypass");
         exit(); 
     }

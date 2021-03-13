@@ -1,29 +1,44 @@
-<!DOCTYPE html>
+<?php
+  session_start();
+?>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/style.css">
-  <script src="scripts/main.js"></script>
-  <script src="scripts/index.js"></script>
+  <link rel="stylesheet" href="../styles/style.css">
+  
+  
+
   <title>The Perfector</title>
-  <link rel="shortcut icon" href="imagens/logo-icon.svg" type="image/x-icon">
+  <link rel="shortcut icon" href="../imagens/logo-icon.svg" type="image/x-icon">
 </head>
 
 <body>
 
   <nav class="navbar">
     <ul>
-      <li class="title"><a href="index.html"><img src="imagens/logo-icon-circle.svg" width="71px"></a></li>
+      <li class="title"><a href="index.php"><img src="../imagens/logo-icon-circle.svg" width="71px"></a></li>
+
       <li><a href="#">Home</a></li>
       <li><a href="#comoF">Como funciona</a></li>
       <li><a href="#cate">Categorias</a></li>
-
+  
 
       <div class="bt">
-        <li><a href="paginas/signup.php"><button class="cadastro">Cadastrar-se</button></a></li>
-        <li><a href="paginas/login.html" ><button class="entrar">Entrar</button></a></li>
+      <?php
+          if(isset($_SESSION["userid"])){
+            echo "<li><a href='../paginas/signup.php'><button class='cadastro'>App</button></a></li>";
+            echo " <li><a href='includes/logout.inc.php' ><button class='entrar'>Sair</button></a></li>";
+            echo "<p>Ola,".$_SESSION["useruid"]."</p>";
+          }else{
+            echo "<li><a href='../paginas/signup.php'><button class='cadastro'>Cadastrar-se</button></a></li>";
+            echo " <li><a href='includes/login.php' ><button class='entrar'>Entrar</button></a></li>";
+            
+          
+          }
+
+      ?>
       </div>
     </ul>
   </nav>
@@ -81,7 +96,7 @@
     </div>
 
     <div id="textbox2" class="textbox">
-      <img src="imagens/Star.png" alt="estrela">
+      <img src="../imagens/Star.png" alt="estrela">
         <div class="text">
           <h2>Lorem ipsum dolor</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Laoreet nisl nulla montes, dignissim massa rutrum id.</p>
@@ -94,12 +109,12 @@
         <h2>Lorem ipsum dolor</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Laoreet nisl nulla montes, dignissim massa rutrum id.</p>
       </div>
-      <img src="imagens/Shield.png" alt="escudo">
+      <img src="../imagens/Shield.png" alt="escudo">
       
     </div>
 
     <div id="textbox4" class="textbox">
-      <img src="imagens/hand.png" alt="mão">
+      <img src="../imagens/hand.png" alt="mão">
       <div class="text">
         <h2>Lorem ipsum dolor</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Laoreet nisl nulla montes, dignissim massa rutrum id.</p>

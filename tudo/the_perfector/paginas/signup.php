@@ -37,9 +37,41 @@
             <input type="password" name="senha" placeholder="Senha">
             <input type="password" name="repSenha" placeholder="Repita a Senha">
             <br>
+            <h1 name="campovazio"></h1>
             <input type="submit"  name="submit" value="Cadastrar" id="b">
             
         </form>
+
+        <?php
+
+
+        if(isset($_GET["error"])){
+                if($_GET["error"]== "Campovazio"){
+                  echo "Preencha todo os campos!";   
+                }
+                else if($_GET["error"] == "emailinvalido"){
+                  echo "Email Inválido!";
+                }
+                else if($_GET["error"] == "usuariovazio"){
+                  echo "Usuário Inválido!";  
+                }
+                else if($_GET["error"] == "senhavazia"){
+                  echo "Senha Inválida";  
+                }
+                else if($_GET["error"] == "usuarioemailca"){
+                   echo "Usuario e email já cadastrado"; 
+                }
+                else if($_GET["error"] == "stmtfalho"){
+                    echo "Algo deu errado, tente novamente";
+                }
+                else if($_GET["error"] == "none"){
+                  header("location: includes\login.inc.php");  
+                  echo "Cadastro efetuado com sucesso!";
+                  
+                }
+                
+            }
+        ?>
 
 
         <div id="links">

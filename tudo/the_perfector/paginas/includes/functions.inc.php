@@ -1,6 +1,9 @@
 <?php
+
+
+
 function emptyInputSignup($user,$senha,$repsenha,$email){
-    $result = true;
+    $result = "";
     if(empty($user) || empty($senha) || empty($repsenha) || empty($email)){
         $result = true;
     }
@@ -10,27 +13,27 @@ else{
     return $result;
 }
 function invalidUid($user){
-    $result =true;
+    $result ="";
     if(!preg_match("/^[a-zA-Z0-9]*$/",$user)){
      $result = true;
-}
-else{
+    }
+    else{
      $result = false;
-}    
- return $result;
-}
+    }    
+    return $result;
+    }
 function invalidEmail($email){
-    $result = true;
+    $result ="";
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         $result = true;
     }
     else{
         $result = false;
-    }
+  }
     return $result;
 }
 function senhaIgual($senha,$repsenha){
-    $result = true;
+    $result ="";
     if($senha !== $repsenha){
         $result = true;
     }
@@ -39,13 +42,14 @@ function senhaIgual($senha,$repsenha){
     }
     return $result;
 }
-function dadoVa($conn,$user,$email){
-    $sql = "SELECT * FROM users WHERE userUid = ? or userEmail = ?;";
+function uidExist($conn,$user,$email){
+    $sql = "SELECT * FROM users WHERE userUid = ? OR userEmail = ?;";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt,$sql)){
-    header("location: ../signup.php?error=emptypass");
+    header("location: ../signup.php?error=dadoscadastrados");
     exit();
 }   
+
     mysqli_stmt_bind_param($stmt,"ss",$user,$email);
     mysqli_stmt_execute($stmt);
 
@@ -60,17 +64,54 @@ function dadoVa($conn,$user,$email){
     }
     mysqli_stmt_close($stmt);
 }
-function createUser($conn,$user,$email){
-    $sql = "INSERT INTO users (userEmail,userUid,userPwd) VALUES (?,?,?);";
+
+function createUser($conn,$email,$user,$senha){
+    $sql = "INSERT INTO users (userUid,userEmail,userPwd) VALUES (?,?,?);";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt,$sql)){
-    header("location: ../signup.php?error=stmtfailad");
+    header("location: ../signup.php?error=stmtfalho");
     exit();
 }   
-    $hashPass = password_hash($senha, PASSWORD_DEFAULT);
+    $hashPass = password_hash($senha,PASSWORD_DEFAULT);
     mysqli_stmt_bind_param($stmt,"sss",$user,$email,$hashPass);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location: ../signup.php?error=none");
     exit();
+}
+
+
+
+function emptyInputLogin($user,$senha){
+    $result = true;
+    if(empty($user) || empty($senha)){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+    return $result;
+}
+function loginUser($conn,$user,$senha){
+    include_once "dbh.inc.php";
+
+    $uidExist = uidExist($conn,$user,$user);
+    if($uidExist === false){
+          header("location: login.php?error=wronglogin");
+          exit();
+    }
+    $pwdHashd = $uidExist["userPwd"];
+    $checkPwd = password_verify($senha,$pwdHashd);
+
+    if($checkPwd === false){
+        header("location: login.php?error=wronglogin");
+        exit();
+    }
+    else if($checkPwd === true){
+        session_start();
+        $_SESSION["userid"]=$uidExist["userId"];
+        $_SESSION["useruid"]=$uidExist["userUid"];
+        header("location: ../index.php");
+        exit();
+    }
 }
