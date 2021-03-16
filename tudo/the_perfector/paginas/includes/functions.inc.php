@@ -1,8 +1,8 @@
 <?php
 
-
-
+/*Cadastro validação */
 function emptyInputSignup($user,$senha,$repsenha,$email){
+    /*Funçao que checa se os campos estão vazios */
     $result = "";
     if(empty($user) || empty($senha) || empty($repsenha) || empty($email)){
         $result = true;
@@ -13,6 +13,7 @@ else{
     return $result;
 }
 function invalidUid($user){
+    /*Checando se o usuario é valido */
     $result ="";
     if(!preg_match("/^[a-zA-Z0-9]*$/",$user)){
      $result = true;
@@ -23,6 +24,7 @@ function invalidUid($user){
     return $result;
     }
 function invalidEmail($email){
+    /*Checando se o email é valido */
     $result ="";
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         $result = true;
@@ -33,6 +35,7 @@ function invalidEmail($email){
     return $result;
 }
 function senhaIgual($senha,$repsenha){
+    /*Checando se as senhas são iguais */
     $result ="";
     if($senha !== $repsenha){
         $result = true;
@@ -42,7 +45,26 @@ function senhaIgual($senha,$repsenha){
     }
     return $result;
 }
+function senhaInvalida($senha){
+    $result = "";
+    $c = strlen($senha);
+    $padraoSenha = "/^[a-zA-Z0-9@*!%;:.]{8}$/";
+    if($c <> 8) {
+        $result = true;
+    
+    if(preg_match($padraoSenha,$senha)){
+        $result = true;    
+    }
+   }
+    else{
+        $result = false;
+    }
+    return $result;
+}
+
+
 function uidExist($conn,$user,$email){
+    /*Checando se o usuario ou email existe*/
     $sql = "SELECT * FROM users WHERE userUid = ? OR userEmail = ?;";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -50,6 +72,8 @@ function uidExist($conn,$user,$email){
     exit();
 }   
 
+
+    /* */
     mysqli_stmt_bind_param($stmt,"ss",$user,$email);
     mysqli_stmt_execute($stmt);
 
@@ -64,8 +88,9 @@ function uidExist($conn,$user,$email){
     }
     mysqli_stmt_close($stmt);
 }
-
+    
 function createUser($conn,$email,$user,$senha){
+    /*Criando uma conta no bd */
     $sql = "INSERT INTO users (userUid,userEmail,userPwd) VALUES (?,?,?);";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -92,6 +117,9 @@ function emptyInputLogin($user,$senha){
     }
     return $result;
 }
+
+
+/*Login validação*/
 function loginUser($conn,$user,$senha){
     include_once "dbh.inc.php";
 

@@ -5,7 +5,7 @@ main{
     display: block;
     position: fixed;
     margin-left: 60%;
-    width: 30%;
+    width: 20%;
 }
 section{
     font-family: Arial, Helvetica, sans-serif;
@@ -35,9 +35,9 @@ form input#b{
     background-color: rgb(35, 96, 254);
     font-size: 14pt;
     color: #ffffff;
-    width: 40%;
+    width: 10%;
     right: 500px;
-    border: 0;
+    
 }
 form p{
     font-size: 18pt;
@@ -52,7 +52,7 @@ form h1{
     font-family: Arial, Helvetica, sans-serif;
 }
 form{
-    width: 100%;
+    width: 90%;
     text-align: center;
 }
 div#links{
@@ -65,4 +65,4 @@ div#links a{
     margin-bottom: 20px;
     font-family: Arial, Helvetica, sans-serif;
     color: #1079F4;
-}
+}   

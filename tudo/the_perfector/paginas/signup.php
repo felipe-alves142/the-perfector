@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/login.css">
+
     <link rel="shortcut icon" href="../imagens/logo-icon.svg" type="image/x-icon">
 </head>
-<body>
-
+<body>       
     <section>
-
-    
-
-        <h1>Entre e começe a receber orçamentos para serviços</h1>
+        <h1>Cadastre-se e começe a receber orçamentos para serviços</h1>
 
         
         
@@ -47,42 +47,39 @@
 
         if(isset($_GET["error"])){
                 if($_GET["error"]== "Campovazio"){
-                  echo "Preencha todo os campos!";   
+                 echo '<div id="msg" class="alert alert-danger" role="alert">Preencha todo os campos!</div>';  
                 }
                 else if($_GET["error"] == "emailinvalido"){
-                  echo "Email Inválido!";
+                 echo '<div class="alert alert-danger" role="alert">Email Inválido</div>';  
                 }
                 else if($_GET["error"] == "usuariovazio"){
-                  echo "Usuário Inválido!";  
+                    echo '<div class="alert alert-danger" role="alert">Usuário Vazio!</div>';
                 }
-                else if($_GET["error"] == "senhavazia"){
-                  echo "Senha Inválida";  
+                else if($_GET["error"] == "senhainvalida"){
+                    echo '<div class="alert alert-danger" role="alert">Senha Inválida!</div>';
                 }
-                else if($_GET["error"] == "usuarioemailca"){
-                   echo "Usuario e email já cadastrado"; 
+                else if($_GET["error"] == "jacadastrado"){
+                    echo '<div class="alert alert-danger" role="alert">Usuario e email já cadastrado</div>'; 
                 }
                 else if($_GET["error"] == "stmtfalho"){
-                    echo "Algo deu errado, tente novamente";
+                    echo '<div class="alert alert-danger" role="alert">Algo deu errado, tente novamente!</div>';
+                }
+                else if($_GET["error"] == "senhainvalida"){
+                    echo '<div class="alert alert-danger" role="alert">Senha Inválida!</div>';
                 }
                 else if($_GET["error"] == "none"){
                   header("location: includes\login.inc.php");  
                   echo "Cadastro efetuado com sucesso!";
                   
                 }
-                
+               
             }
         ?>
 
 
-        <div id="links">
-            <a href="">Esqueci minha senha</a>
-            <a href="cadastro.html">Não tem conta ? Cadastre-se aqui</a>
-            <a href="">Política de privacidade</a>
-
-        </div>
-
+      
     </main>
-
+ 
     
 </body>
 </html>

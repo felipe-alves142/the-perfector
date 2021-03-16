@@ -15,7 +15,7 @@ if (isset($_POST["submit"])){
         exit();
     }   
     if(invalidUid($user) !== false){
-        header("location: ../signup.php?error=emptyuid");
+        header("location: ../signup.php?error=usuarioinvalido");
         exit();
     }
     if(invalidEmail($email) !== false){
@@ -27,9 +27,14 @@ if (isset($_POST["submit"])){
         exit();
     }
     if(uidExist($conn,$user,$email)!==false){
-        header("location: ../signup.php?error=emptypass");
+        header("location: ../signup.php?error=jacadastrado");
         exit(); 
     }
+    if(senhaInvalida($senha) !== false){
+        header("location: ../signup.php?error=senhainvalida");
+        exit();
+    }
+    /*Criando um novo usuario no banco de dados */
     createUser($conn,$email,$user,$senha);
 }
 else {
