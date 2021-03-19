@@ -22,16 +22,16 @@
       <li class="title"><a href="index.php"><img src="../imagens/logo-icon-circle.svg" width="71px"></a></li>
 
       <li><a href="#">Home</a></li>
-      <li><a href="comoF">Como funciona</a></li>
+      <li><a href="#comoF">Como funciona</a></li>
       <li><a href="#cate">Categorias</a></li>
-  
+
 
       <div class="bt">
       <?php
           if(isset($_SESSION["userid"])){
             echo "<li><a href='../paginas/signup.php'><button class='cadastro'>App</button></a></li>";
             echo " <li><a href='includes/logout.inc.php' ><button class='entrar'>Sair</button></a></li>";
-            echo "<p>Ola,".$_SESSION["useruid"]."</p>";
+            echo "<p align = 'left'>Ola,".$_SESSION["useruid"]."</p>";
           }else{
             echo "<li><a href='../paginas/signup.php'><button class='cadastro'>Cadastrar-se</button></a></li>";
             echo " <li><a href='includes/login.php' ><button class='entrar'>Entrar</button></a></li>";

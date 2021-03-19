@@ -7,20 +7,36 @@
 // validar a data
 // validar celular
     
-function validar(){
-    document.getElementById('bt').addEventListener('click' , vcpf())
-    var estado =document.getElementById("state").value
-    var cidade =document.getElementById("city").value
-    var nome =document.getElementById("name").value
-    document.getElementById("cpf") //.addEventListener('input' ,function(){vcpf()})
-    var data =document.getElementById("date").value
-    var email =document.getElementById("email").value
-    var senha =document.getElementById("password").value
-    var confsenha =document.getElementById("passwordOne").value
-    var telefone =document.getElementById("tlf").addEventListener('input',function(){te()})
-    var celular =document.getElementById("cll").value
+window.onload = function(){
+    var senha = document.getElementById("se")
+    document.getElementById("se").oninput =function(){validaSenha()}
+    var length
+    for(length=0;length < 9; length++){
+        
+    }
     
-    if(nome == ""){
+    function validaSenha(){
+        var mn = /[0-9]{2}/i
+        var espe = /[@!%;:.]/i
+        if(senha.value.length < 8){
+            document.getElementById("mx").style.color = "red";
+        }
+        else{
+            document.getElementById("mx").style.color = "green";
+        }
+        if(!senha.value.match(mn)) {
+            document.getElementById("mn").style.color = "red";    
+        }else{
+            document.getElementById("mn").style.color = "green"
+        }
+        if(!senha.value.match(espe)){
+            document.getElementById("mc").style.color = "red"
+        }else{
+            document.getElementById("mc").style.color = "green"
+        }
+    }
+}
+    /*if(nome == ""){
         document.getElementById("rnome").innerHTML="Nome Inválido!"
 
     }
@@ -80,5 +96,5 @@ function validar(){
             
         }
         
+    */
     
-    }

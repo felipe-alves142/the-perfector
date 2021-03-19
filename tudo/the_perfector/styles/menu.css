@@ -4,7 +4,7 @@ nav.navbar
     padding: 6px 0px 0px 0px;
     display: block;
     position: relative;
-    width: 100%;
+    width: 80%;
     
 }
 .navbar a:hover
@@ -30,7 +30,6 @@ li.title a
     font-family: serif;
     font-size: 30pt;
     padding-bottom: 2px;
-    padding-top: 2px;
     margin-left: 20px;
     margin-right: 60px;
     color: rgb(011, 073, 232);
@@ -57,4 +56,14 @@ button.cadastro {
     padding: 7px 10px;
     font-size: 16pt;
     color: white;
+    position:absolute;
+    right: 100px;
 }
+form input#b{
+    background-color: rgb(35, 96, 254);
+    font-size: 14pt;
+    color: #ffffff;
+    width: 40%;
+    right: 500px;
+    border: 0;
+}    
