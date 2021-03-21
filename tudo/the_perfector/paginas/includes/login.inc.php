@@ -13,7 +13,7 @@
         loginUser($conn,$user,$senha);
     }
     else{
-        header("location: ../index.php");
+        header("location: login.php");
         exit();
     }
 

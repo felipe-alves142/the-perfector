@@ -1,0 +1,63 @@
+#bvd{
+    text-align: center;
+}
+#topdash{
+    padding: 5px;
+    background-color:rgba(233, 233, 233, 0.719);
+}
+li{
+    list-style: none;
+}
+#re,#ap,#fi{
+    display: inline-block;
+    position: relative;
+    top:25px;
+    left: 400px;    
+}
+footer
+{
+    position: absolute;
+    bottom: -10px;
+    width: 99%;
+    padding-top: 10px;
+    padding-left: 1%;
+    padding-bottom: 10px;
+    background: linear-gradient(to  left, rgb(011,073,216), rgb(175,043,248));
+    color: white;
+    font-size: 10pt;
+    
+}
+
+footer h1 a{
+    text-decoration: none;
+    color: white;
+    font-size: 14pt;
+}
+
+footer div#a{
+    display: inline-block;
+}
+
+footer div#b{
+    display: inline-block;
+    
+}
+
+#menu{
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    top: -1px;
+    right: 15px;
+}
+#subm{
+    display: none;
+}
+#menu:hover #subm{
+    display: block;
+}
+#chat , #cpe{
+    position: relative;
+    top: 400px;
+    left: 1300px;
+}

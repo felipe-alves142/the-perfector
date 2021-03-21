@@ -69,7 +69,7 @@ if(isset($_GET["error"])){
                 <br>
             <p for="senha">Senha</p>
                 <br>
-            <input type="password" name="senha" id="se" placeholder="Senha">
+            <input type="password" name="senha" id="se" placeholder="Senha" min="1"max="8">
                 <ul>
                     <li id="mx">Máximo 8 digitos</li><br>
                     <li id="mn">Deve ter 2 números</li><br>

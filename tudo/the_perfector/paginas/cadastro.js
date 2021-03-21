@@ -20,9 +20,8 @@ window.onload = function(){
         var espe = /[@!%;:.]/i
         if(senha.value.length < 8){
             document.getElementById("mx").style.color = "red";
-        }
-        else{
-            document.getElementById("mx").style.color = "green";
+        }else{
+            document.getElementById("mx").style.color = "green";    
         }
         if(!senha.value.match(mn)) {
             document.getElementById("mn").style.color = "red";    

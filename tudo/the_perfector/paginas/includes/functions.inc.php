@@ -139,7 +139,7 @@ function loginUser($conn,$user,$senha){
         session_start();
         $_SESSION["userid"]=$uidExist["userId"];
         $_SESSION["useruid"]=$uidExist["userUid"];
-        header("location: ../index.php");
+        header("location: ../dashboard.php");
         exit();
     }
 }
