@@ -69,13 +69,13 @@ if(isset($_GET["error"])){
                 <br>
             <p for="senha">Senha</p>
                 <br>
-            <input type="password" name="senha" id="se" placeholder="Senha" min="1"max="8">
+            <input type="password" name="senha" id="se" placeholder="Senha" maxlength="8">
                 <ul>
                     <li id="mx">Máximo 8 digitos</li><br>
                     <li id="mn">Deve ter 2 números</li><br>
                     <li id="mc">Deve ter estes caracteres especiais: @!%;:.</li>
                 </ul>
-            <input type="password" name="repSenha" placeholder="Repita a Senha">
+            <input type="password" name="repSenha" placeholder="Repita a Senha" maxlength="8">
             
             <input type="submit"  name="submit" value="Cadastrar" id="b">
 

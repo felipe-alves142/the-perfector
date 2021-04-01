@@ -139,7 +139,33 @@ function loginUser($conn,$user,$senha){
         session_start();
         $_SESSION["userid"]=$uidExist["userId"];
         $_SESSION["useruid"]=$uidExist["userUid"];
-        header("location: ../dashboard.php");
+     
+       header("location: ../display.php");
         exit();
     }
 }
+  function campovazio($titulo,$categoria,$descricao,$subcategoria){
+    $result="";
+    if(empty($titulo) || empty($categoria) || empty($descricao) || empty($subcategoria) !== false){
+        $result = true;
+    }else{
+        $result = false;
+    }
+    return $result;
+  } 
+  
+  function guardaPedido($conn,$titulo,$categoria,$descricao,$subcategoria){
+      $sql="INSERT INTO pedido(titulo,categoria,descricao,suB,pedidoUser) VALUES (?,?,?,?,?);";
+      $stmt= mysqli_stmt_init($conn);  
+      if(!mysqli_stmt_prepare($stmt,$sql)){
+        header("location: ../pedido.php?error=stmtfalho");
+        exit();
+      }  
+      mysqli_stmt_bind_param($stmt,'ssss',$titulo,$categoria,$descricao,$subcategoria);
+      mysqli_stmt_execute($stmt);
+      mysqli_stmt_close($stmt);
+      
+
+      header("location: ../dashboard.php?error=none");
+      exit();
+    }
