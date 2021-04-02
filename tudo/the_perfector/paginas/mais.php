@@ -11,8 +11,8 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-    require_once "includes/dbh.inc.php";
+   <?php
+   /* require_once "includes/dbh.inc.php";
     $stmt= mysqli_stmt_init($conn);
     $codigo = $_GET["codigo"];
     $sql="UPDATE pedido SET status=?,pedidoUser = ? WHERE Peid = $codigo;";

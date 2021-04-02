@@ -4,9 +4,9 @@ if (isset($_POST["submit"])){
     $titulo = $_POST["titulo"];
     $categoria = $_POST["categoria"];
     $subcategoria = $_POST["sub"];
-  //  $anexar = $_POST["anexar"];
+    $anexar = $_POST["anexar"];
     $descricao = $_POST["des"];
-   // $orcamento = $_POST["gender"];
+    $orcamento = $_POST["gender"];
   
 
     require_once 'dbh.inc.php';
@@ -22,6 +22,7 @@ if (isset($_POST["submit"])){
         exit();
     }**/
    
-    guardaPedido($conn,$titulo,$categoria,$descricao,$subcategoria);
-}
+    guardaPedido($conn,$titulo,$categoria,$descricao,$subcategoria,$anexar,$orcamento);
+   // guardaOrcamento($conn,$orcamento);
+  }
 

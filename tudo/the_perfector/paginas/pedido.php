@@ -44,10 +44,10 @@
 
         Orçamento <br>
 
-            <input type="radio"  id="male" name="gender" value="male">
-            <label for="male" id="m"><p id="labelt"> <p id="labelt">  Menos de R$ 300,00 </p></label>
+            <input type="radio"  id="male" name="gender" value="Menos de R$ 300,00">
+            <label for="male" id="m" ><p id="labelt"> <p id="labelt" name="valor">  Menos de R$ 300,00 </p></label>
             
-            <input type="radio"  id="male" name="gender" value="male">
+            <input type="radio"  id="male" name="gender" value="R$ 301,00 à R$ 500,00">
             <label for="male" id="m"><p id="labelt"> <p id="labelt">  R$ 301,00 à R$ 500,00 </p></label>
         
             <input type="radio"  id="male" name="gender" value="male">

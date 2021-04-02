@@ -154,18 +154,31 @@ function loginUser($conn,$user,$senha){
     return $result;
   } 
   
-  function guardaPedido($conn,$titulo,$categoria,$descricao,$subcategoria){
-      $sql="INSERT INTO pedido(titulo,categoria,descricao,suB,pedidoUser) VALUES (?,?,?,?,?);";
+  function guardaPedido($conn,$titulo,$categoria,$descricao,$subcategoria,$anexar,$orcamento){
+      $sql="INSERT INTO pedido(titulo,categoria,descricao,suB,pedidoUser,anexo,orcamento) VALUES (?,?,?,?,?,?,?);";
       $stmt= mysqli_stmt_init($conn);  
       if(!mysqli_stmt_prepare($stmt,$sql)){
         header("location: ../pedido.php?error=stmtfalho");
         exit();
       }  
-      mysqli_stmt_bind_param($stmt,'ssss',$titulo,$categoria,$descricao,$subcategoria);
+      session_start();
+      $cara= $_SESSION["useruid"];
+      mysqli_stmt_bind_param($stmt,'sssssss',$titulo,$categoria,$descricao,$subcategoria,$cara,$anexar,$orcamento);
       mysqli_stmt_execute($stmt);
       mysqli_stmt_close($stmt);
       
 
-      header("location: ../dashboard.php?error=none");
+      header("location: ../dashboard.php");
       exit();
     }
+ /*function guardaOrcamento($conn,$orcamento){
+    $sql = "INSER INTO orcamento(orca) VALUES (?);";
+    $stmt=mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        header("location: ../pedido.php?error=stmtfalho");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt,"s",$orcamento);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_execute($stmt);
+*/

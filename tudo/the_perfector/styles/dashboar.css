@@ -73,7 +73,7 @@ a{
     position: relative;
     background-color:#e1effa;
     top: 50px;
-    left:370px;
+    left:360px;
     border-radius: 25px;
     padding: 20px;
     width: 180px;
@@ -101,9 +101,6 @@ a{
 }
 li p{
     position:relative;
-    right:100px;
-}
-#cont{
-    position: relative;
-    left: 100px;
+    right:0px;
+    left: 30px;
 }

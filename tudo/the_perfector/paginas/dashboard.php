@@ -1,10 +1,10 @@
 <?php
     session_start();
     include("includes/dbh.inc.php");
-    $codigo=$_GET["codigo"];
+    $codigo='0';
     $sql="SELECT * FROM pedido WHERE Peid=$codigo;";
     $stmt=mysqli_stmt_init($conn);
-    $con= mysqli_query($conn,$sql) or die(mysqli_error($conn)); 
+    $con= mysqli_query($conn,$sql) or die(mysqli_error($conn));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,9 +59,11 @@
     <br><br>
     
     <?php while($dado = $con -> fetch_array()){?>
-    <tr>
-        <td>Enviado por:<?php echo '<span id="cont">'.$dado["pedidoUser"].'</span>';?></td>
+        <tr>
+            <center>
+        <td>Enviado por:<?php echo $dado["pedidoUser"];?></td>
         <td></td>
+            </center>
     </tr>
     <?php }?>
     </body>
