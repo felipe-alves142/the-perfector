@@ -8,8 +8,8 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../imagens/logo-icon.svg" type="image/x-icon">
     <link rel="stylesheet" href="../styles/pedido.css">
-    <script src="../scripts/pedido.js"></script>
-    <title>Pedido</title>
+    <script src="../scripts/pedi.js"></script>
+   <title>Pedido</title>
     
     </head>
 <body>
@@ -43,22 +43,23 @@
         <input type="file" name="anexar" ><br><br>
 
         Orçamento <br>
+        <div id="in">
+        
+        <input type="radio" id="p1" name="pedido"  value="Menos de R$ 300,00">
+        <label for="p1"> Menos de R$ 300,00 </label><br>
 
-            <input type="radio"  id="male" name="gender" value="Menos de R$ 300,00">
-            <label for="male" id="m" ><p id="labelt"> <p id="labelt" name="valor">  Menos de R$ 300,00 </p></label>
-            
-            <input type="radio"  id="male" name="gender" value="R$ 301,00 à R$ 500,00">
-            <label for="male" id="m"><p id="labelt"> <p id="labelt">  R$ 301,00 à R$ 500,00 </p></label>
+        <input type="radio" id="p2" name="pedido" value="R$ 301,00 a R$ 500,00">
+        <label id ="ps" for="p2" >R$ 301,00 à R$ 500,00 </label><br>
+
+        <input type="radio" id="p3" name="pedido" value="R$ 501,00 a R$ 800,00">
+        <label id="ps1" for="p3">R$ 501,00 à R$ 800,00</label><br><br>
         
-            <input type="radio"  id="male" name="gender" value="male">
-            <label for="male" id="m"><p id="labelt"> <p id="labelt"> R$ 501,00 à R$ 800,00  </p></label>
-            <br>
-            <input type="radio"  id="male" name="gender" value="male">
-            <label for="male" id="m"><p id="labelt"> <p id="labelt">  R$ 801,00 à R$ 1200,00 </p></label>
-        
-            <input type="radio"  id="male" name="gender" value="male">
-            <label for="male" id="m"><p id="labelt"> <p id="labelt"> R$ 1200,00 </p></label>
-        
+        <input type="radio" id="p4" name="pedido" value="R$ 801,00 a R$ 1200,00">
+        <label id="ps2" for="p4">R$ 801,00 à R$ 1200,00</label><br></br>
+
+        <input type="radio" id="p5" name="pedido" value="R$ 1200,00">
+        <label id="ps3" for="p5">R$ 1200,00</label>
+        </div>
        <div id="con"><input type="submit" name="submit" value="Confirmar" id="c"></div>
             
     </form>

@@ -1,7 +1,6 @@
 <?php
     session_start();
     include("includes/dbh.inc.php");
-    $codigo='0';
     $sql="SELECT * FROM pedido WHERE Peid=$codigo;";
     $stmt=mysqli_stmt_init($conn);
     $con= mysqli_query($conn,$sql) or die(mysqli_error($conn));
@@ -28,9 +27,9 @@
         <li><img id="prof" src="../imagens/usuario.png"></li>
         <ul id="subm">
             <?php
-                
-              echo "<li><a href='includes/logout.inc.php'>Sair</a></li>";
-            
+              echo "<li><a href='dashboardEmpresa.php'>Empresa</a></li><br>";  
+                    
+              echo "<li><a href='includes/logout.inc.php'>Sair</a></li><br>";
                 
             ?>
             </ul>    
@@ -38,12 +37,15 @@
 
 
     <?php
-    include_once "includes/footer.php";
-    if(isset($_SESSION["userid"])){
-        include_once "includes/functions.inc.php";
-        echo "<p id='bvd'>Bem Vindo(a) ".$_SESSION["useruid"]."</p>";
+          
+          include_once "includes/footer.php";
+          if(isset($_SESSION["userid"])){
+              include_once "includes/functions.inc.php";
+              echo "<p id='bvd'>Bem Vindo(a) ".$_SESSION["useruid"]."</p>";
+      
+              }  
+          
 
-        }  
     ?>
     <br>
     </div>

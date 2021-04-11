@@ -1,12 +1,14 @@
 <head>
     <link rel="stylesheet" href="../styles/dashboar.css">
     <link rel="stylesheet" href="../styles/menudash.css">
+    <link rel="shortcut icon" type="image/icon" href="../imagens/logo-icon.svg"> 
+
 </head>
 <body>
 
     <ul>
         <li><a href="dashboard.php">Dashboard</a></li>
-        <li>Explorar</li>
+        <li><a Explorar href="display.php">Explorar </a> </li>
         
     </ul>
 <nav id="menu">
@@ -18,7 +20,7 @@
             <?php
                 
               echo "<li><a href='includes/logout.inc.php'>Sair</a></li>";
-            
+                
                 
             ?>
             </ul>

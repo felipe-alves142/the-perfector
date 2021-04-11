@@ -29,7 +29,10 @@ table{
    <table> 
 
     
-        <?php while($dado = $con -> fetch_array()){ ?>
+        <?php while($dado = $con -> fetch_array()){  
+                  $codigo =$dado['Peid'];
+                  $_SESSION['co']=$codigo;
+                   ?>
             
             <tr>
                 <td>Titulo</td>
@@ -45,7 +48,11 @@ table{
                 <td><?php echo $dado["categoria"];?></td>
                 <td><?php echo $dado["suB"];?></td>
                 <td><?php echo$dado["descricao"];?></td>
-                <td><a href="mais.php?codigo=<?php  echo $dado["Peid"];?>"> Mais</a></td>
+                
+                <td><?php echo$dado["Peid"];?></td>
+                <td><a href="mais.php?codigo=<?php echo $dado['Peid'];   ?>
+                
+                "> Mais</a></td>
                 <td></td>
             </tr>
             <tr>

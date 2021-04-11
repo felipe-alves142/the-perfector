@@ -171,14 +171,30 @@ function loginUser($conn,$user,$senha){
       header("location: ../dashboard.php");
       exit();
     }
- /*function guardaOrcamento($conn,$orcamento){
-    $sql = "INSER INTO orcamento(orca) VALUES (?);";
+ function guardaOrcamento($conn,$orcaEmpresa,$cara){
+    $sql = "INSERT INTO orcamento(orca,userOR) VALUES (?,?);";
     $stmt=mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt,$sql)){
-        header("location: ../pedido.php?error=stmtfalho");
+        header("location: ../mais.php?error=stmtfalho");
         exit();
     }
-    mysqli_stmt_bind_param($stmt,"s",$orcamento);
+   
+    mysqli_stmt_bind_param($stmt,"ss",$orcaEmpresa,$cara);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_execute($stmt);
-*/
+    
+    header('location: ../dashboardEmpresa.php');
+    exit();
+ }
+
+function emptyOrca($orcaEmpresa){
+    $result='';
+    if(empty($orcaEmpresa)){
+        $result = true;
+    }else{
+        $result = false;
+    }
+    return $result;
+}
+ 
+ 

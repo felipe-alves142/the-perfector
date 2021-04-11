@@ -6,7 +6,7 @@ if (isset($_POST["submit"])){
     $subcategoria = $_POST["sub"];
     $anexar = $_POST["anexar"];
     $descricao = $_POST["des"];
-    $orcamento = $_POST["gender"];
+    $orcamento = $_POST["pedido"];
   
 
     require_once 'dbh.inc.php';

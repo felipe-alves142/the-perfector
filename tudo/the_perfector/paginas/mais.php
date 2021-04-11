@@ -1,6 +1,13 @@
 <?php
+    include('includes/dbh.inc.php');
+    if(isset($_GET['codigo'])){
+      $codigo= $_GET['codigo'];
+    $sql="SELECT * FROM pedido WHERE Peid = $codigo;";
+    $stmt= mysqli_stmt_init($conn);
+    $query= mysqli_query($conn,$sql) or die(mysqli_error($conn));
+    require_once "includes/functions.inc.php";
     session_start();
-
+    $_SESSION['co']=$codigo;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,24 +18,25 @@
     <title>Document</title>
 </head>
 <body>
-   <?php
-   /* require_once "includes/dbh.inc.php";
-    $stmt= mysqli_stmt_init($conn);
-    $codigo = $_GET["codigo"];
-    $sql="UPDATE pedido SET status=?,pedidoUser = ? WHERE Peid = $codigo;";
-    if(!mysqli_stmt_prepare($stmt,$sql)){
-        header("location: mais.php?error=stmtfalho");
-        exit();
-    }
+   <?php while($dado= $query -> fetch_array()){;?>
+    <td>
+        <tr> <?php echo $dado['Peid'];?></tr> <br>           
+        <tr> <?php echo $dado['titulo'];?></tr> <br>
+        <tr><?php echo $dado['categoria'];?></tr>
+        <tr><?php echo $dado['descricao'];?></tr> <br>
+        <tr><?php echo $dado['suB'];?></tr>
+        <tr><?php echo $dado['pedidoUser'];?></tr> <br>
+        <tr><?php echo $dado['anexo'];?></tr> <br>
+        <tr><?php echo $dado['orcamento'];?></tr>
 
-    include_once "includes/functions.inc.php";
-    $pu=$_SESSION["useruid"];
-    $status= "RECEBIDO";
-    mysqli_stmt_bind_param($stmt,'ss',$status,$pu);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_close($stmt);
-    header("location: dashboard.php?codigo=$codigo;");
-    exit();
-    ?>
+        
+    </td>
+    <form action="includes/mais.inc.php" method='post'>
+    Dar Orçamento: <br>
+    <input type="number" name="muorca">
+    <input type="submit" name="submit" value="Enviar">
+    </form>
+      <?php }?>
+    <?php }?>
 </body>
 </html>
