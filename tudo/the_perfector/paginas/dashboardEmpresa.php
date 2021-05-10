@@ -1,40 +1,99 @@
 <?php
-        
-    require_once "menudash.php";
-    include('includes/dbh.inc.php');
-  //  session_start();
-   // $cod= $_SESSION['co'];
-    $sql="SELECT * FROM pedido;";
+    session_start();
+    include("includes/dbh.inc.php");
+    $nome= strval($_SESSION['useruid']);
 
+    $sql="SELECT * FROM orcamento,pedido WHERE (idOr LIKE Peid) AND pedidoUser = '$nome';";
+    
     $stmt=mysqli_stmt_init($conn);
-    $query= mysqli_query($conn,$sql) OR die(mysqli_error($conn));
-?>
+    $con= mysqli_query($conn,$sql) or die(mysqli_error($conn));
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="stylesheet" href="../styles/dashboar.css">
-    <title>Empresa</title>
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/icon" href="../imagens/logo-icon.svg"> 
+    <link rel="stylesheet" href="../styles/dashboardEmpresa.css">
+    <link rel="stylesheet" href="../styles/footer.css">
 </head>
 <body>
-<ul>
-        <li id="re"><a   href="#" style="text-decoration:none"><p>Ultimas Visualizações</p> </a></li>
-        <li id="ap"><a  href="#" style="text-decoration:none"> <p>Meus Serviços</p></a></li>
-        <li id="fi"><a  href="#" style="text-decoration:none"><p>Agendados</p></a></li>
+<style>
+        a{
+            text-decoration: none;
+            color: black;
+        }
+ 
+    </style>
+<div id="topdash">
+        <ul>
+         <li><a href="display.php" style="text-decoration:none">Explorar</a></li>
+         <li><a href="categorias.php" style="text-decoration:none">Categorias</a></li>
+        </ul>
+        
+        <ul id="menu">
+        <li><img id="prof" src="../imagens/usuario.png"></li>
+        <ul id="subm">
+            <?php
+             echo "<li><a href='dashboard.php'>Cliente</a></li><br>";
+                    
+              echo "<li><a href='includes/logout.inc.php'>Sair</a></li><br>";
+                
+            ?>
+            </ul>    
+  </ul>
+
+    <?php
+          
+          include_once "includes/footer.php";
+          if(isset($_SESSION["userid"])){
+              include_once "includes/functions.inc.php";
+              echo "<p id='bvd'>Bem Vindo(a) Prestador ".$_SESSION["useruid"]."</p>";
+            
+      
+              }
+
+    ?>
+    <br>
+    </div>
+    <ul>
+        <li id="re"><a   href="#" style="text-decoration:none"><p>Avaliações</p> </a></li>
+        <li id="ap"><a   href="#" style="text-decoration:none"> <p>  Meus Serviços</p></a></li>
+        <li id="fi"><a   href="#" style="text-decoration:none"><p>Agenda</p></a></li>
         
     </ul>
-    <?php while($dado = $query -> fetch_array()){?>
-        <td>
-            <tr><?php echo $dado['titulo'];?></tr>
-            <tr><?php echo $dado['descricao'];?></tr>
-            <tr><?php echo $dado['pedidoUser'];?></tr>
-        </td>
+    <a href="#"><img id="chat" src="../imagens/chat.png"></a>
+    <a href="pedido.php"><img id="cpe" src="../imagens/cpedido.png"></a>
+    <br><br>
+    
+    <?php while($dado = $con -> fetch_array()){
+     ?>
+     
+     <?php 
+     
+     echo "<div  id='meio'><tr ><td>Enviado por:".$dado["userOR"]."</td> <br>";
+     echo "<td >Valor:$".$dado['orca']."</td>";
+      echo "<a style='position:absolute; top:25px;left:175px;' href='detalhes.php?codigo=$dado[Peid]'>
+         
+            <img src='../imagens/Vector.png'>       
+            <img style='position:absolute; left: 90px; top:70px; height: 50px;' src='../imagens/ant-design_plus-circle-outlined.png'>
+  
+      </a>";
+  
+     echo " </tr></div><br>";
+    
+       
+     ?>
 
-    <?php }
-    ?>
+        
+ 
+    
+    <?php }?>
 
+   
 </body>
 </html>

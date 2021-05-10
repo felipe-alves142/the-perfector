@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../imagens/logo-icon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="../styles/pedido.css">
+    <link rel="stylesheet" href="../styles/pedid.css">
     <script src="../scripts/pedi.js"></script>
    <title>Pedido</title>
     

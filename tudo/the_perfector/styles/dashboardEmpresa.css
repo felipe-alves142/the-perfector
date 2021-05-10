@@ -4,7 +4,6 @@
 }
 #topdash{
     padding: 5px;
-
     
 }
 #topdash li{
@@ -86,5 +85,5 @@ li p{
     position: relative;
     left:600px;
     border-radius: 7px;
-
+    
 }

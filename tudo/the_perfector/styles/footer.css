@@ -1,0 +1,60 @@
+
+footer
+{
+    position: absolute;
+    bottom: -10px;
+    width: 99%;
+    padding-top: 10px;
+    padding-left: 1%;
+    padding-bottom: 10px;
+    background: linear-gradient(to  left, rgb(011,073,216), rgb(175,043,248));
+    color: white;
+    font-size: 10px;
+    
+}
+
+footer h1 a{
+    text-decoration: none;
+    color: white;
+    font-size: 14pt;
+}
+
+footer div#a{
+    display: inline-block;
+}
+
+footer div#b{
+    display: inline-block;
+    
+}
+
+footer h1 a{
+    text-decoration: none;
+    color: white;
+    font-size: 14pt;
+}
+
+footer div#a{
+    display: inline-block;
+}
+
+footer div#b{
+    display: inline-block;
+    
+}
+footer div{
+    display: inline;
+}
+
+footer p#a{
+    font-size: 14pt;
+}
+
+footer div#b{
+    display: inline;
+}
+div#cate{
+    text-align: center;
+    width: 100%;
+    margin-top: 10%;
+}

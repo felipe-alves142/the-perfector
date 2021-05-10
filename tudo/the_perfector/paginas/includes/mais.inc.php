@@ -11,7 +11,8 @@
 }
  session_start();
  $cara=$_SESSION["useruid"];
- guardaOrcamento($conn,$orcaEmpresa,$cara);
+ $c=$_SESSION['co'];
+ guardaOrcamento($conn,$c,$orcaEmpresa,$cara);
 }
  
  

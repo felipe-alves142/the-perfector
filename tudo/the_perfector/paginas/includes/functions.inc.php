@@ -71,24 +71,22 @@ function uidExist($conn,$user,$email){
     header("location: ../signup.php?error=dadoscadastrados");
     exit();
 }   
+  /* */
+  mysqli_stmt_bind_param($stmt,"ss",$user,$email);
+  mysqli_stmt_execute($stmt);
+
+  $resulData = mysqli_stmt_get_result($stmt);
 
 
-    /* */
-    mysqli_stmt_bind_param($stmt,"ss",$user,$email);
-    mysqli_stmt_execute($stmt);
-
-    $resulData = mysqli_stmt_get_result($stmt);
-
-    if($row = mysqli_fetch_assoc($resulData)){
-        return $row;
-    }
-    else{
-        $result = false;
-        return $result;
-    }
-    mysqli_stmt_close($stmt);
+if($row = mysqli_fetch_assoc($resulData)){
+    return $row;
 }
-    
+else{
+    $result = false;
+    return $result;
+}
+mysqli_stmt_close($stmt);
+}
 function createUser($conn,$email,$user,$senha){
     /*Criando uma conta no bd */
     $sql = "INSERT INTO users (userUid,userEmail,userPwd) VALUES (?,?,?);";
@@ -139,8 +137,8 @@ function loginUser($conn,$user,$senha){
         session_start();
         $_SESSION["userid"]=$uidExist["userId"];
         $_SESSION["useruid"]=$uidExist["userUid"];
-     
-       header("location: ../display.php");
+        
+       header("location: ../dashboard.php");
         exit();
     }
 }
@@ -171,15 +169,15 @@ function loginUser($conn,$user,$senha){
       header("location: ../dashboard.php");
       exit();
     }
- function guardaOrcamento($conn,$orcaEmpresa,$cara){
-    $sql = "INSERT INTO orcamento(orca,userOR) VALUES (?,?);";
+ function guardaOrcamento($conn,$c,$orcaEmpresa,$cara){
+    $sql = "INSERT INTO orcamento(idOr,orca,userOR) VALUES (?,?,?);";
     $stmt=mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt,$sql)){
         header("location: ../mais.php?error=stmtfalho");
         exit();
     }
-   
-    mysqli_stmt_bind_param($stmt,"ss",$orcaEmpresa,$cara);
+    
+    mysqli_stmt_bind_param($stmt,"sss",$c,$orcaEmpresa,$cara);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_execute($stmt);
     
@@ -196,5 +194,3 @@ function emptyOrca($orcaEmpresa){
     }
     return $result;
 }
- 
- 

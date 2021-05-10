@@ -1,15 +1,18 @@
 <head>
-    <link rel="stylesheet" href="../styles/dashboar.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
     <link rel="stylesheet" href="../styles/menudash.css">
     <link rel="shortcut icon" type="image/icon" href="../imagens/logo-icon.svg"> 
-
+ 
 </head>
 <body>
-
-    <ul>
-        <li><a href="dashboard.php">Dashboard</a></li>
-        <li><a Explorar href="display.php">Explorar </a> </li>
+    <style>
         
+    </style>
+
+    <ul >
+    
+     <li> <a href="dashboard.php">Dashboard</a> </li>
+
     </ul>
 <nav id="menu">
         

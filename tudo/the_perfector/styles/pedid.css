@@ -1,7 +1,7 @@
 input{
     border: 0px;
     background-color: white;
-    
+    border-radius: 7px;
 }
 input:hover{
     background-color: white;

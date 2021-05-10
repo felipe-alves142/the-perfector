@@ -1,14 +1,12 @@
 <head>
-<link rel="stylesheet" href="../../styles/dash.css">
-    <link rel="stylesheet" href="../styles/dash.css">
-    <link rel="stylesheet" href="../styles/menudash.css">
-
     <link rel="stylesheet" href="../../styles/menudash.css">
+    <link rel="stylesheet" href="../../styles/dashboard.css">
+
 </head>
 <body>
 
     <ul>
-        <li><a href="dashboard.php">Dashboard</a></li>
+        <li ><a href="dashboard.php" >Dashboard</a></li>
         <li>Explorar</li>
         
     </ul>
