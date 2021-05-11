@@ -21,7 +21,7 @@
     form{
         position: relative;
         top: 180px;
-        left:500px;
+        left:800px;
         
     }
     input{
@@ -31,27 +31,63 @@
         width: 250px;
         height: 40px;
     }
-</style>
-    <?php
-     include_once "includes/profileTop.php";
+    #page1{
+        
+        position: relative;
+        top: 180px;
+        left:800px;
+        
+    }
     
-    ?>
-        <a href="#" style="text-decoration:nonne;"><h4>Perfil</h4></a> <br>
-        <a href="#"><h4>Conta</h4></a><br>
-        <a href="#"><h4>Configurações</h4></a>
+</style>
+    
+			<script>
+				function showPage(page){
+					document.querySelectorAll('div').forEach(div => {
+						div.style.display = 'none';
+					})
+					document.querySelector(`#${page}`).style.display = 'block';
+				}
+					
+					document.addEventListener("DOMContentLoaded" , function(){
+					   //evento que faz esperar todo conteudo da página carregar
+						document.querySelectorAll("a").forEach(a => {
+					
+						//Seleciona a query button e faz um loop	
+						 a.onclick= function(){
+							 // esse loop vai mostrar ou desaparecer de acordo com o borao selecionado
+							 showPage(this.dataset.page);
+						 }
+					   })
+				   })
+				
+			   </script>
+			
+    <?php include_once "includes/profileTop.php";?>
+        <a href="#" style="text-decoration:nonne;" data-page="page1"><h4>Perfil</h4></a> <br>
+        <a href="#" data-page="page2"><h4>Conta</h4></a><br>
+        <a href="#" data-page="page3"><h4>Configurações</h4></a>
+        
+        <div id="page2" style="display:none;">
+            <form action="" method=""> <br>
+                <h5>Email:</h5> <br>
+                <input type="text" name="" id=""  > <br><br>
+                <h5>Senha:</h5> <br>
+                <input type="text" name="" id="" placeholder="Senha"> <br> <br>
+                <h5>Repita a nova senha:</h5> <br>
+                <input type="text" name="" id="" placeholder="Repita a nova senha"> <br> <br><br><br><br>
+                    <h5>Apagar minha Conta:</h5> <br>
+                    <input type="text" name="" id="" placeholder="Digite Sua Senha">  <br>
+                </form>
+        </div>
 
-        <form action="" method=""> <br>
-            <h5>Email:</h5> <br>
-            <input type="text" name="" id=""> <br><br>
-            <h5>Senha:</h5> <br>
-            <input type="text" name="" id="" placeholder="Senha"> <br> <br>
-            <h5>Repita a nova senha:</h5> <br>
-            <input type="text" name="" id="" placeholder="Repita a nova senha"> <br> <br><br><br><br>
-            <div style="background-color:#FBBCC8; width:400px; height: 170px; padding:20px;">
-                <h5>Apagar minha Conta:</h5> <br>
-                <input type="text" name="" id="" placeholder="Digite Sua Senha">  <br>
-            </div> <br><br><br><br>
-        </form>
-       
+        <div id="page1" >
+              <h6>Email:</h6> 
+              <h6>Celular:</h6>
+              <h3>Localização</h3> <br>
+              <h6>Cidade</h6>
+              <h6>Estado</h6>
+
+        </div>
 </body>
 </html>
