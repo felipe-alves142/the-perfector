@@ -17,10 +17,10 @@ if (isset($_POST["submit"])){
         header("location: ../pedido.php?error=Campovazio");
         exit();
     }   
-    /**else{
+    else{
         header("location: ../dashboard.php");
         exit();
-    }**/
+    }
    
     guardaPedido($conn,$titulo,$categoria,$descricao,$subcategoria,$anexar,$orcamento);
    // guardaOrcamento($conn,$orcamento);

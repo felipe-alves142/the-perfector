@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="../styles/dashboard.css">
+    <link rel="stylesheet" href="../styles/dashboar.css">
     <link rel="stylesheet" href="../styles/menudash.css">
     <link rel="shortcut icon" type="image/icon" href="../imagens/logo-icon.svg"> 
  

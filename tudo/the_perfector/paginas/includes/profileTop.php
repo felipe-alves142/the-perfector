@@ -1,11 +1,13 @@
 <?php 
       session_start();
       require_once "dadosPega.php";
-      $p1 = new Pega;
-      $sql = $p1 -> sql = "SELECT * FROM pedido;";
-      $stmt = $p1 -> stmt = mysqli_init($conn);
+      $p1 = new pega;
+      $nome = $_SESSION['useruid'];
+      //$sql = $p1 -> sql = "SELECT * FROM users ;";
+      $sql = "SELECT * FROM users WHERE userUid='$nome';";
+      $stmt = $padrao -> stmt;
       $con = $p1-> con = mysqli_query($conn,$sql) or die(mysqli_error($conn));
-             
+         
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,18 +23,12 @@
           if(isset($_SESSION["userid"])){
             //include_once "includes/functions.inc.php";
             echo $_SESSION["useruid"];
-          
+            
     
             }
 
     ?></h2>
-    <?php 
-        while($dado = $con -> fetch_array()){
-        
-    ?>
-
-    <?php }?>
-
+    
     
     
 </body>

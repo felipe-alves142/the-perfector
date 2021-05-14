@@ -47,7 +47,7 @@ a{
     position: relative;
     background-color:#e1effa;
     top: 50px;
-    left:430px;
+    left:400px;
     border-radius: 25px;
     padding: 20px;
     width: 180px;
@@ -57,7 +57,7 @@ a{
     position: relative;
     background-color:#e1effa;
     top: 50px;
-    left:450px;
+    left:420px;
     border-radius: 25px;
     padding: 20px;
     width: 180px;
@@ -67,7 +67,7 @@ a{
     position: relative;
     background-color:#e1effa;
     top: 50px;
-    left:470px;
+    left:450px;
     border-radius: 25px;
     padding: 20px;
     width: 180px;
@@ -84,7 +84,7 @@ li p{
     height: 150px;
     padding: 15px;
     position: relative;
-    left:600px;
+    left:580px;
     border-radius: 7px;
 
 }

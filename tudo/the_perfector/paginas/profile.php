@@ -62,16 +62,24 @@
 				   })
 				
 			   </script>
+          
+
 			
     <?php include_once "includes/profileTop.php";?>
-        <a href="#" style="text-decoration:nonne;" data-page="page1"><h4>Perfil</h4></a> <br>
+        <a href="#" style="text-decoration:none;" data-page="page1"><h4>Perfil</h4></a> <br>
         <a href="#" data-page="page2"><h4>Conta</h4></a><br>
         <a href="#" data-page="page3"><h4>Configurações</h4></a>
         
-        <div id="page2" style="display:none;">
+       
+                        
+        <?php 
+        while($dado = $con -> fetch_array()){
+        
+        ?>
+ <div id="page2" style="display:none;">
             <form action="" method=""> <br>
                 <h5>Email:</h5> <br>
-                <input type="text" name="" id=""  > <br><br>
+                <input type="text" name="email" id="email"  value="<?php echo $dado['userEmail'];?>"> <br><br>
                 <h5>Senha:</h5> <br>
                 <input type="text" name="" id="" placeholder="Senha"> <br> <br>
                 <h5>Repita a nova senha:</h5> <br>
@@ -80,14 +88,16 @@
                     <input type="text" name="" id="" placeholder="Digite Sua Senha">  <br>
                 </form>
         </div>
-
         <div id="page1" >
-              <h6>Email:</h6> 
+              <h6>Email:</h6>
+              <?php echo $dado["userEmail"];?> 
               <h6>Celular:</h6>
               <h3>Localização</h3> <br>
               <h6>Cidade</h6>
               <h6>Estado</h6>
 
         </div>
+            
+    <?php }?>
 </body>
 </html>

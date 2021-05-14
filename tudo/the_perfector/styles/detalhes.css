@@ -1,0 +1,43 @@
+div{
+    position: relative;
+    top: 150px;
+    left: 500px;
+    background-color:#F4FCFF;
+    width: 400px;
+    padding: 10px;
+}
+#detalhe{
+    position: relative;
+    left: 200px;
+}
+h5{
+    padding: 14px;
+}
+
+button.aprovar {
+    display: block;
+    background: #05DD5E;
+    border: 0;
+    border-style: groove;
+    border-radius: 5px;
+    padding: 7px 10px;
+    font-size: 16pt;
+    color: white;
+    position: relative;
+    top: 160px;
+    left: 750px;
+}
+
+button.rejeitar {
+    display: block;
+    background: #ff3c00;
+    border:0;
+    border-style: groove;
+    border-radius: 5px;
+    padding: 7px 10px;
+    font-size: 16pt;
+    color: white;
+    position: relative;
+    top: 204px;
+    left: 550px;
+}
