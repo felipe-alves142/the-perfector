@@ -22,10 +22,10 @@
         <select name="categoria" id="subc">
         
             <option value="" disabled selected>Categoria</option>
-            <option value="se">se</option>
-            <option value="ffw">ffe</option>
-            <option value="vv">vv</option>
-            <option value="sss">sss</option>
+            <option value="Gerais">Gerais</option>
+            <option value="Programação">Programação</option>
+            <option value="Marcenaria">Marcenaria</option>
+            <option value="Contrução">Contrução</option>
         </select><br><br>
        <div id="des">
         Descreva o serviço a ser executado
@@ -34,10 +34,10 @@
         
             <select name="sub" id="subc">
                 <option value="" disabled selected>Sub-Categoria</option>
-                <option value="op1"><p>op</p></option>
-                <option value="op2">op2</option>
-                <option value="op3">op3</option>
-                <option value="op4">op4</option>
+                <option value="Ajudante">Ajudante<p></p></option>
+                <option value="Programador Web/Mobile">Programador Web/Mobile</option>
+                <option value="Pintor">Pintor</option>
+                <option value="Pedreiro">Pedreiro</option>
             </select><br><br>
         Anexar Arquivos <br>
         <input type="file" name="anexar" ><br><br>

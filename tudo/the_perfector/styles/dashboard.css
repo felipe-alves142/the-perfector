@@ -4,7 +4,6 @@
 }
 #topdash{
     padding: 5px;
-
     
 }
 #topdash li{
@@ -47,7 +46,7 @@ a{
     position: relative;
     background-color:#e1effa;
     top: 50px;
-    left:400px;
+    left:430px;
     border-radius: 25px;
     padding: 20px;
     width: 180px;
@@ -57,7 +56,7 @@ a{
     position: relative;
     background-color:#e1effa;
     top: 50px;
-    left:420px;
+    left:450px;
     border-radius: 25px;
     padding: 20px;
     width: 180px;
@@ -67,7 +66,7 @@ a{
     position: relative;
     background-color:#e1effa;
     top: 50px;
-    left:450px;
+    left:470px;
     border-radius: 25px;
     padding: 20px;
     width: 180px;
@@ -82,9 +81,20 @@ li p{
     background-color:#59e068;
     width: 320px;
     height: 150px;
-    padding: 15px;
+    padding: 20px;
     position: relative;
-    left:580px;
+    left:600px;
     border-radius: 7px;
+    
+}
 
+@media screen and (max-width: 1060px) {
+    #primary { width:87%; }
+    #secondary { width:30%; margin-left:3%;}  
+}
+
+/* Media Queries: Tabled Portrait */
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
 }

@@ -3,7 +3,7 @@
     include("includes/dbh.inc.php");
     $nome= strval($_SESSION['useruid']);
     
-    $sql="SELECT * FROM orcamento,pedido WHERE (idOr LIKE Peid) AND pedidoUser = '$nome' AND status = 'Recebido' ;";
+    $sql="SELECT * FROM orcamento,pedido WHERE (idOr LIKE Peid) AND pedidoUser = '$nome' AND status = 'Recebido';";
     $stmt=mysqli_stmt_init($conn);
     $con= mysqli_query($conn,$sql) or die(mysqli_error($conn));
 
@@ -12,13 +12,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximun-scale=1,user-scalable=no">
+    <meta name="HandheldFriendly" content="true">
     <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="shortcut icon" type="image/icon" href="../imagens/logo-icon.svg"> 
-    <link rel="stylesheet" href="../styles/dashboar.css">
-    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
+    <link rel="stylesheet" href="../styles/foote.css">
 </head>
 <body>
 <script>
@@ -38,8 +39,8 @@
 							 // esse loop vai mostrar ou desaparecer de acordo com o borao selecionado
 							 showPage(this.dataset.page);
 						 }
-					   })
 				   })
+				  })
 				
 		
 
@@ -68,7 +69,7 @@
             ?>
             </ul>    
   </ul>
-
+        <div id="primary">
     <?php
           
           include_once "includes/footer.php";
@@ -99,12 +100,12 @@
      
      echo "<div  id='meio'><tr ><td >Enviado por:".$dado["userOR"]."</td> <br>";
      echo "<td >Valor:$".$dado['orca']."</td>";
-      echo "<div style='position:absolute; top:25px;left:175px;'>
+     echo "<a style='position:absolute; top:25px;left:175px;' href='detalhes.php?codigo=$dado[Peid]'>
          
-            <img src='../imagens/Vector.png'>       
-            <img style='position:absolute; left: 80px; top:70px; height: 50px;' src='../imagens/ant-design_plus-circle-outlined.png'>
-  
-      </div></div>";
+     <img src='../imagens/Vector.png'>       
+     <img style='position:absolute; left: 90px; top:70px; height: 50px;' src='../imagens/ant-design_plus-circle-outlined.png'>
+
+</a></div>";
         
      echo " </tr><br>";
      
@@ -122,5 +123,7 @@
       <?php 
         include_once "includes/finalizados.php";
       ?>
+        </div>  
+        
 </body>
 </html>

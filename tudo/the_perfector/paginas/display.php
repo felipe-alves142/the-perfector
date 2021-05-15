@@ -5,6 +5,7 @@
     include("includes/dbh.inc.php");
     $sql="SELECT * FROM pedido LIMIT 2;";
     $stmt=mysqli_stmt_init($conn);
+    
     $con= mysqli_query($conn,$sql) or die(mysqli_error($conn));
     require "menudash.php";
    
@@ -16,7 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/foote.css">
     <title>Display</title>
 </head>
 <body>
@@ -29,6 +30,7 @@
     padding-right: 100px;
     width: 500px;
     height: 300px;
+    top: -50px;
     background-color: #E1EFFB;
     border-radius: 10px;
     }   
@@ -60,7 +62,7 @@ p{
      padding:20px; 
      top:200px; 
      width:300px;
-     height: 200px;
+     height: 350px;
      background-color:#E1EFFB;
      margin: 0;
 }
@@ -69,15 +71,31 @@ a{
             text-decoration: none;
             color: black;
 }
-
+input{
+    border-radius: 7px;
+    border: 0;
+}
 
 </style>
     <h3 style="position:relative; left: 300px; top: 50px;  padding:0; width:150px;">Serviços</h3> 
     <div id="filtro">
-        <h3>Filtrar Serviços</h3> <br>
-        <h5>Sub-Categoria:</h5>
-        <h5>Data esperada de conclusão:</h5>
-        <h5>Orcamento:</h5>
+        <form action="display.php" method="post">
+            <h3>Filtrar Serviços</h3>
+                <input type="text" name="filtrar">
+            <h5>Sub-Categoria:</h5>
+                <input type="text" name="Sub-categoria">
+            <h5>Data esperada de conclusão:</h5>
+                <input type="text" name="conclusao">
+            <h5>Orcamento:</h5>
+                <select >
+                    <option name="orca" value="Menos de R$ 300,00" selected>Menos de R$ 300,00</option>
+                    <option value="R$ 301,00 à R$ 500,00">R$ 301,00 à R$ 500,00</option>
+                    <option value="R$ 501,00 à R$ 800,00">R$ 501,00 à R$ 800,00</option>
+                    <option value="R$ 801,00 à R$ 1200,00">R$ 801,00 à R$ 1200,00</option>
+                    <option value="R$ 1200,00">R$ 1200,00</option>
+                </select>
+            <input type="submit">   
+        </form>
     </div>
    <table> 
 
