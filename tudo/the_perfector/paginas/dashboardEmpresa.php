@@ -2,7 +2,7 @@
     session_start();
     include("includes/dbh.inc.php");
     $nome= strval($_SESSION['useruid']);
-    $sql="SELECT * FROM orcamento,pedido WHERE (idOr LIKE Peid) AND userOR = '$nome';";
+    $sql="SELECT * FROM orcamento,pedido WHERE (idOr LIKE Peid) AND userOR = '$nome' AND status='Aprovado';";
     
     $stmt=mysqli_stmt_init($conn);
     $con= mysqli_query($conn,$sql) or die(mysqli_error($conn));
@@ -96,10 +96,12 @@
         
  
     
-    <?php }?>
     <section id="page2" style="display:none;">
         
-    <h1>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
+
+ 
     </section>
+
+    <?php }?>
 </body>
 </html>
