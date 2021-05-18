@@ -18,7 +18,7 @@
     <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="shortcut icon" type="image/icon" href="../imagens/logo-icon.svg"> 
-    <link rel="stylesheet" href="../styles/dashboard.css">
+    <link rel="stylesheet" href="../styles/dashboar.css">
     <link rel="stylesheet" href="../styles/foote.css">
 </head>
 <body>
@@ -124,6 +124,6 @@
         include_once "includes/finalizados.php";
       ?>
         </div>  
-        
+
 </body>
 </html>

@@ -1,9 +1,11 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 #bvd{
     text-align: center;
 }
 #topdash{
-    padding: 5px;
+    background: linear-gradient(to top, rgb(255, 255, 255), rgba(235, 233, 234, 0.678));
+    padding: 6px 0px 0px 0px;
+    width: 100%;
     
 }
 #topdash li{
@@ -46,7 +48,7 @@ a{
     position: relative;
     background-color:#e1effa;
     top: 50px;
-    left:430px;
+    left:400px;
     border-radius: 25px;
     padding: 20px;
     width: 180px;
@@ -56,7 +58,7 @@ a{
     position: relative;
     background-color:#e1effa;
     top: 50px;
-    left:450px;
+    left:420px;
     border-radius: 25px;
     padding: 20px;
     width: 180px;
@@ -66,7 +68,7 @@ a{
     position: relative;
     background-color:#e1effa;
     top: 50px;
-    left:470px;
+    left:440px;
     border-radius: 25px;
     padding: 20px;
     width: 180px;
@@ -86,15 +88,4 @@ li p{
     left:600px;
     border-radius: 7px;
     
-}
-
-@media screen and (max-width: 1060px) {
-    #primary { width:87%; }
-    #secondary { width:30%; margin-left:3%;}  
-}
-
-/* Media Queries: Tabled Portrait */
-@media screen and (max-width: 768px) {
-    #primary { width:100%; }
-    #secondary { width:100%; margin:0; border:none; }
 }
