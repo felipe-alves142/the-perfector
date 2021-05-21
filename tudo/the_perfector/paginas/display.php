@@ -1,11 +1,10 @@
 
   
 <?php   
-
+    session_start();
     include("includes/dbh.inc.php");
-    $sql="SELECT * FROM pedido LIMIT 2;";
+    $sql="SELECT * FROM pedido,orcamento WHERE status='Recebido'LIMIT 2 ;";
     $stmt=mysqli_stmt_init($conn);
-    
     $con= mysqli_query($conn,$sql) or die(mysqli_error($conn));
     require "menudash.php";
    
@@ -17,14 +16,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styles/foote.css">
+    <link rel="stylesheet" href="../styles/footer.css">
 
     <title>Display</title>
 </head>
 <body>
 
 <style>
-
 #da{
     position:relative; 
     left:700px;
@@ -76,6 +74,10 @@ input{
     border-radius: 7px;
     border: 0;
 }
+footer{
+    top:800px;
+    height:50px;
+    }
 
 </style>
     <h3 style="position:relative; left: 300px; top: 50px;  padding:0; width:150px;">Serviços</h3> 
@@ -85,8 +87,7 @@ input{
                 <input type="text" name="filtrar">
             <h5>Sub-Categoria:</h5>
                 <input type="text" name="Sub-categoria">
-            <h5>Data esperada de conclusão:</h5>
-                <input type="text" name="conclusao">
+            
             <h5>Orcamento:</h5>
                 <select >
                     <option name="orca" value="Menos de R$ 300,00" selected>Menos de R$ 300,00</option>
@@ -124,6 +125,7 @@ input{
                      <path d='M33.5195 4.125C17.5738 4.125 4.64453 17.0543 4.64453 33C4.64453 48.9457 17.5738 61.875 33.5195 61.875C49.4652 61.875 62.3945 48.9457 62.3945 33C62.3945 17.0543 49.4652 4.125 33.5195 4.125ZM33.5195 56.9766C20.2809 56.9766 9.54297 46.2387 9.54297 33C9.54297 19.7613 20.2809 9.02344 33.5195 9.02344C46.7582 9.02344 57.4961 19.7613 57.4961 33C57.4961 46.2387 46.7582 56.9766 33.5195 56.9766Z' fill='#2AE876'/>
                      </svg>
                      </a>";   
+                    
                      echo "</div> <br>";   
                     
                      ?>

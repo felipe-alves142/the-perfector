@@ -6,7 +6,7 @@
     $sql="SELECT * FROM orcamento,pedido WHERE (idOr LIKE Peid) AND pedidoUser = '$nome' AND status = 'Recebido';";
     $stmt=mysqli_stmt_init($conn);
     $con= mysqli_query($conn,$sql) or die(mysqli_error($conn));
-
+    $_SESSION['telefone']=$ph=5511910206964;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,8 +18,9 @@
     <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="shortcut icon" type="image/icon" href="../imagens/logo-icon.svg"> 
-    <link rel="stylesheet" href="../styles/dashboar.css">
-    <link rel="stylesheet" href="../styles/foote.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    
 </head>
 <body>
 <script>
@@ -76,9 +77,8 @@
           if(isset($_SESSION["userid"])){
               include_once "includes/functions.inc.php";
               echo "<p id='bvd'>Bem Vindo(a) ".$_SESSION["useruid"]."</p>";
-            
-      
-              }
+             
+             }
 
     ?>
     <br>
@@ -89,7 +89,8 @@
         <li id="fi"><a   href="#" style="text-decoration:none" ><p>Finalizado</p></a></li>
         
     </ul>
-    <a href="#"><img id="chat" src="../imagens/chat.png"></a>
+    <?php 
+    echo "<a href='https://web.whatsapp.com/send?phone= $_SESSION[telefone];' target='blank'><img id='chat' src='../imagens/chat.png'></a>"    ?>
     <a href="pedido.php"><img id="cpe" src="../imagens/cpedido.png"></a>
     <br><br>
     <section id="page1">
@@ -119,8 +120,8 @@
     </section>
   
     <section id="page2" style="display:none;">
+    <?php
       
-      <?php 
         include_once "includes/finalizados.php";
       ?>
         </div>  

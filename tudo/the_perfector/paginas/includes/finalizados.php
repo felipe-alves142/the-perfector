@@ -19,17 +19,15 @@
 <body>
 <?php while($dado = $con -> fetch_array()){
      ?>
-     
-     <?php 
+       <?php 
      
      echo "<div  id='meio'><tr ><td >Enviado por:".$dado["userOR"]."</td> <br>";
-     echo "<td >Valor:$".$dado['orca']."</td>";
+     echo "<td >Valor:$".$dado['orca']."</td> <br>";
+     echo "<a href='https://web.whatsapp.com/send?phone= $_SESSION[telefone];' target='blank'>Chat</a>";
      echo "
-         
             
      </div>";
-        
-     echo " </tr><br>";
+              echo " </tr><br>";
      
        
      ?>

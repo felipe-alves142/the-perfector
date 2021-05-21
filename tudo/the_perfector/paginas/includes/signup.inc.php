@@ -2,7 +2,7 @@
 
 if (isset($_POST["submit"])){
     $user = $_POST["usuario"];
-    $senha =$_POST["senha"];
+    $senha = $_POST["senha"];
     $repsenha=$_POST["repSenha"];
     $email = $_POST["email"];
 
@@ -23,7 +23,7 @@ if (isset($_POST["submit"])){
         exit();
     }
     if(senhaIgual($senha,$repsenha) !== false){
-        header("location: ../signup.php?error=emptypass");
+        header("location: ../signup.php?error=senhadesigual");
         exit();
     }
     if(uidExist($conn,$user,$email)!==false){

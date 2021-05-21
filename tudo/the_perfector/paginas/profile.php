@@ -18,12 +18,7 @@
         left:89px;
         
     }
-    form{
-        position: relative;
-        top: 180px;
-        left:800px;
-        
-    }
+    
     input{
         border-radius: 7px;
         background-color:#F0F0F0;
@@ -88,14 +83,20 @@
                     <input type="text" name="" id="" placeholder="Digite Sua Senha">  <br>
                 </form>
         </div>
-        <div id="page1" >
+        <div id="page1">
+            <form action="includes/profile.inc.php" method="post">
               <h6>Email:</h6>
-              <?php echo $dado["userEmail"];?> 
+              <?php echo $dado["userEmail"];?>
               <h6>Celular:</h6>
+                <input type="number" name="celular" placeholder="celular">
               <h3>Localização</h3> <br>
+                <input type="text" name="estado" placeholder="Estado">
               <h6>Cidade</h6>
-              <h6>Estado</h6>
+                <input type="text" name="cidade" placeholder="cidade"> <br> </br>
+                <input type="submit" name="submit" value="Confirmar"> 
+                
 
+            </form>
         </div>
             
     <?php }?>

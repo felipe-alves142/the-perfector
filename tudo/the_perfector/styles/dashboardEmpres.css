@@ -1,9 +1,10 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 #bvd{
     text-align: center;
 }
 #topdash{
-    padding: 5px;
+    padding: 6px 0px 0px 0px;
+    width: 100%;
     
 }
 #topdash li{
@@ -29,7 +30,7 @@
 }
 #chat , #cpe{
     position: relative;
-    top: 500px;
+    top: 400px;
     left: 1300px;
 }
 a{
@@ -81,7 +82,7 @@ li p{
     background-color:#59e068;
     width: 320px;
     height: 150px;
-    padding: 15px;
+    padding: 20px;
     position: relative;
     left:600px;
     border-radius: 7px;

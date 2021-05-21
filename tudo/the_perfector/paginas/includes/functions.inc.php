@@ -48,6 +48,7 @@ function senhaIgual($senha,$repsenha){
 function senhaInvalida($senha){
     $result = "";
     $c = strlen($senha);
+
     $padraoSenha = "/^[a-zA-Z0-9@*!%;:.]{8}$/";
     if($c <> 8) {
         $result = true;
@@ -88,15 +89,18 @@ else{
 mysqli_stmt_close($stmt);
 }
 function createUser($conn,$email,$user,$senha){
-    /*Criando uma conta no bd */
+    /*Criando uma conta no bd
+    adicinando dados no bd
+    */
     $sql = "INSERT INTO users (userUid,userEmail,userPwd) VALUES (?,?,?);";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt,$sql)){
     header("location: ../signup.php?error=stmtfalho");
     exit();
 }   
-    $hashPass = password_hash($senha,PASSWORD_DEFAULT);
-    mysqli_stmt_bind_param($stmt,"sss",$user,$email,$hashPass);
+    $hashPass = password_hash($senha,PASSWORD_DEFAULT); 
+    // código que disfarça a senha no banco de dados
+    mysqli_stmt_bind_param($stmt,"sss",$user,$email ,$hashPass);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location: ../signup.php?error=none");
@@ -202,10 +206,8 @@ function mudaStatus($conn,$status){
         header("location:../dashboard.php?error=stmtfalho");
         exit();
     }
-    session_start();
-    $cod = $_SESSION['co'];
     
-    mysqli_stmt_bind_param($stmt, 'ss', $status,$cod);
+    mysqli_stmt_bind_param($stmt, "ss", $status,$cod);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
@@ -213,3 +215,28 @@ function mudaStatus($conn,$status){
     
     exit();
 }
+/*
+function dadosVazios($celular,$estado,$cidade){
+    $result ="";
+    if(empty($celular) || empty($estado) || empty($cidade)){
+        $result = true;
+    }else{
+        $result = false;
+    }
+    return $result;
+}
+
+function guardaNovosDados($conn,$celular,$estado,$cidade,$codigo){
+    $sql ="UPDATE users SET celular = ? WHERE userId = ?;";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        header('location: ../profile.php?error=stmtfalho');
+        exit();
+    }
+   
+    mysqli_stmt_bind_param($stmt,"ss",$celular,$codigo);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header('location: ../dashboar.php');
+    exit();
+}/*

@@ -3,7 +3,6 @@
     text-align: center;
 }
 #topdash{
-    background: linear-gradient(to top, rgb(255, 255, 255), rgba(235, 233, 234, 0.678));
     padding: 6px 0px 0px 0px;
     width: 100%;
     
@@ -31,7 +30,7 @@
 }
 #chat , #cpe{
     position: relative;
-    top: 200px;
+    top: 400px;
     left: 1300px;
 }
 a{

@@ -27,13 +27,19 @@
    <?php while($dado= $query -> fetch_array()){;?>
          <h6>Descrição:</h6> 
          <?php echo $dado['descricao'];?> <br>
-        <h6> Cliente:</h6><?php echo  "<p id='user'>".$dado['pedidoUser'].'</p>';?>
+        <h6> Cliente:</h6><?php echo  "<p id='user'>".$dado['pedidoUser'].'</p>';
+
+        ?>
+
         <br>
          <?php echo $dado['titulo'];?></tr>
          <h6>Categoria: </h6>
          <?php echo $dado['categoria'];?></tr> 
          <h6>Valor: </h6>
          <?php echo $dado['orcamento'];?>
+          <br> <br>
+         <?php         echo "<a href='https://web.whatsapp.com/send?phone= $_SESSION[telefone];' target='blank'><img id='chat' src='../imagens/chat.png'></a>";
+?>
    </div>
         
     
