@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1,maximun-scale=1,user-scalabre=no">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/styl.css">
   
   
 
@@ -21,8 +21,8 @@
 
       <li><a href="#">Home</a></li>
       <li><a href="#comoF">Como funciona</a></li>
-      <li><a href="#cate">Categorias</a></li>
-            
+    <!--  <li><a href="#cate">Categorias</a></li>
+        -->    
       <div class="bt">
       <li><a href='../paginas/signup.php'><button class='cadastro'>Cadastrar-se</button></a></li>
       <li><a href='includes/login.php' ><button class='entrar'>Entrar</button></a></li>
@@ -38,7 +38,7 @@
 
       <a name="cate"></a>
 
-      <h1>Categorias</h1>
+     <!-- <h1>Categorias</h1>
 
       <br>
 
@@ -74,11 +74,10 @@
     </div>
 
     <hr id="div">
-
+-->
     <a name="comoF"></a>
 
     <h1 id="oq">O que é o Perfecto?</h1>
-
     <div id="textbox1">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Laoreet nisl nulla montes, dignissim massa rutrum id. Pharetra, bibendum ipsum turpis amet, felis, in massa. Sollicitudin mauris nec porttitor ultrices viverra a, convallis integer facilisi. Risus, at suspendisse lacus mattis ultrices odio. Malesuada nibh risus ligula vitae posuere consequat amet.</p>
     </div>
@@ -107,19 +106,56 @@
         <h2>Lorem ipsum dolor</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Laoreet nisl nulla montes, dignissim massa rutrum id.</p>
       </div>
+    </div>                            
+    
     </div>
   </main>
 
 
 
 
+<footer>
 
 
-  <?php
-  include_once "includes/footer.php";
+    <h1><a href="#cate">Serviços</a></h1>
+    <ul>
+      <div class="container">
+        <div class="list-cotrol"> 
+          <li><a href="">Assistencia Técnica</a></li> <br>
+        </div>
 
-  ?>
+        <div class="list-control">
+         <li><a href="">Reformas</a></li>
+        </div>
 
+        <div class="list-control">
+         <li><a href="">Serviços Domésticos</a></li> <br>
+        </div>
+        <div style="position:relative; left: 150px; top: -50px;">
+          <div class="list-control">
+            <li><a href="">Educação</a></li>
+          </div>
+          
+          <div class="list-control">
+            <li><a href="">Design e Tecnologia</a></li> <br>
+          </div>
+
+          <div class="list-control">
+            <li><a href="">Saúde</a></li>
+          </div>
+
+          <div class="list-control">
+          <li><a href="">Beleza e Moda</a></li> 
+          </div>
+
+          <div class="list-control">
+          <li><a href="">Eventos</a></li>
+          </div>  
+        </div>
+      </div>
+    </ul>  
+
+  </footer>
 
 </body>
 

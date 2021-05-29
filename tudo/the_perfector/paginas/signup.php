@@ -6,18 +6,19 @@
     <title>Cadastro</title>
     <script type="text/javascript" src="cadastro.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styles/menu.css">
-    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="../styles/mene.css">
     <link rel="shortcut icon" href="../imagens/logo-icon.svg" type="image/x-icon">
   
 </head>
 
 <body>       
-
+<style>
+ 
+    
+</style>
 
     <section>
-        <h1>Cadastre-se e começe a receber orçamentos para serviços</h1>
-
+       
         <?php
 
 
@@ -76,7 +77,7 @@ if(isset($_GET["error"])){
                     <li id="mc">Deve ter estes caracteres especiais: @!%;:.</li>
                 </ul>
             <input type="password" name="repSenha" placeholder="Repita a Senha" maxlength="8">
-            
+            <br> <br>
             <input type="submit"  name="submit" value="Cadastrar" id="b">
 
         </form>

@@ -33,7 +33,7 @@ ul
 li.title a
 {
     font-family: serif;
-    font-size: 30pt;
+    font-size:30px;
     padding-bottom: 2px;
     padding-top: 2px;
     margin-left: 20px;
@@ -50,7 +50,7 @@ li a
     text-align: center;
     padding: 25px 16px;
     text-decoration: none;
-    font-size: 14pt;
+    
 }
 
 
@@ -64,14 +64,13 @@ footer
     padding-bottom: 10px;
     background: linear-gradient(to  left, rgb(011,073,216), rgb(175,043,248));
     color: white;
-    font-size: 10pt;
+   
     
 }
 
 footer h1 a{
     text-decoration: none;
     color: white;
-    font-size: 14pt;
 }
 
 footer div#a{
@@ -110,7 +109,7 @@ button.entrar {
     border-style: groove;
     border-radius: 5px;
     padding: 5px 30px;
-    font-size: 16pt;
+    font-size: 14pt;
 }
 
 button:hover{
@@ -124,23 +123,6 @@ div.top-desing{
     background-position: center;
     background-size: 100%;
     padding-top: 10%;
-}
-
-footer div{
-    display: inline;
-}
-
-footer p#a{
-    font-size: 14pt;
-}
-
-footer div#b{
-    display: inline;
-}
-div#cate{
-    text-align: center;
-    width: 100%;
-    margin-top: 10%;
 }
 
 button#cat{

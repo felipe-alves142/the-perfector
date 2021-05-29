@@ -16,7 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/foote.css">
 
     <title>Display</title>
 </head>
@@ -29,10 +29,10 @@
     padding-right: 100px;
     width: 500px;
     height: 300px;
-    top: -50px;
+    top: 40px;
     background-color: #E1EFFB;
     border-radius: 10px;
-    }   
+        }   
 #d{
     position: absolute;
     left:430px;
@@ -75,10 +75,9 @@ input{
     border: 0;
 }
 footer{
-    top:800px;
-    height:50px;
-    }
-
+    top:1000px;
+    height: 200px;
+}
 </style>
     <h3 style="position:relative; left: 300px; top: 50px;  padding:0; width:150px;">Serviços</h3> 
     <div id="filtro">

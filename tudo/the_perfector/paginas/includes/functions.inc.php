@@ -1,3 +1,4 @@
+  
 <?php
 
 /*Cadastro validação */
@@ -215,7 +216,6 @@ function mudaStatus($conn,$status){
     
     exit();
 }
-/*
 function dadosVazios($celular,$estado,$cidade){
     $result ="";
     if(empty($celular) || empty($estado) || empty($cidade)){
@@ -227,16 +227,16 @@ function dadosVazios($celular,$estado,$cidade){
 }
 
 function guardaNovosDados($conn,$celular,$estado,$cidade,$codigo){
-    $sql ="UPDATE users SET celular = ? WHERE userId = ?;";
+    $sql ="UPDATE users SET celular = '$celular' WHERE userId = $codigo;";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt,$sql)){
         header('location: ../profile.php?error=stmtfalho');
         exit();
     }
    
-    mysqli_stmt_bind_param($stmt,"ss",$celular,$codigo);
+  //  mysqli_stmt_bind_param($stmt,"ii",$celular,$codigo);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header('location: ../dashboar.php');
+    header('location: ../dashboars.php');
     exit();
-}/*
+}

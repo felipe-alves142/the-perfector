@@ -1,7 +1,7 @@
 <?php
     session_start();
     include("includes/dbh.inc.php");
-    $nome= strval($_SESSION['useruid']);
+    $nome= strval($_SESSION["useruid"]);
     
     $sql="SELECT * FROM orcamento,pedido WHERE (idOr LIKE Peid) AND pedidoUser = '$nome' AND status = 'Recebido';";
     $stmt=mysqli_stmt_init($conn);
@@ -18,8 +18,8 @@
     <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="shortcut icon" type="image/icon" href="../imagens/logo-icon.svg"> 
-    <link rel="stylesheet" href="../styles/dashboard.css">
-    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/dashboar.css">
+    <link rel="stylesheet" href="../styles/foote.css">
     
 </head>
 <body>
@@ -47,33 +47,39 @@
 
 </script>
     <style>
-        a{
-            text-decoration: none;
-            color: black;
-        }
+            a{
+                text-decoration: none;
+                color: black;
+            }
+            footer{
+            top:1000px;
+            height: 200px;
+            }
     </style>
     
    <div id="topdash" style="display:block;">
         <ul>
          <li><a href="display.php" style="text-decoration:none" >Explorar</a></li>
          <li><a href="categorias.php" style="text-decoration:none">Categorias</a></li>
+         <?php include_once "includes/menu.php";?>   
         </ul> 
         
-        <ul id="menu">
-        <li><img id="prof" src="../imagens/usuario.png"></li>
-        <ul id="subm">
+        
+        <!--<li><img id="prof" src="../imagens/usuario.png"></li>-->
+       
+        <ul id="subm">    
             <?php
               echo "<li><a href='dashboardEmpresa.php'>Empresa</a></li><br>";  
               echo "<li><a href='profile.php'>Perfil</a></li><br>";      
               echo "<li><a href='includes/logout.inc.php'>Sair</a></li><br>";
                 
             ?>
-            </ul>    
+            
   </ul>
+  
         <div id="primary">
     <?php
-          
-          include_once "includes/footer.php";
+        include_once "includes/footer.php";          
           if(isset($_SESSION["userid"])){
               include_once "includes/functions.inc.php";
               echo "<p id='bvd'>Bem Vindo(a) ".$_SESSION["useruid"]."</p>";
@@ -93,32 +99,33 @@
     echo "<a href='https://web.whatsapp.com/send?phone= $_SESSION[telefone];' target='blank'><img id='chat' src='../imagens/chat.png'></a>"    ?>
     <a href="pedido.php"><img id="cpe" src="../imagens/cpedido.png"></a>
     <br><br>
-    <section id="page1">
-    <?php while($dado = $con -> fetch_array()){
-     ?>
-     
-     <?php 
-     
-     echo "<div  id='meio'><tr ><td >Enviado por:".$dado["userOR"]."</td> <br>";
-     echo "<td >Valor:$".$dado['orca']."</td>";
-     echo "<a style='position:absolute; top:25px;left:175px;' href='detalhes.php?codigo=$dado[Peid]'>
-         
-     <img src='../imagens/Vector.png'>       
-     <img style='position:absolute; left: 90px; top:70px; height: 50px;' src='../imagens/ant-design_plus-circle-outlined.png'>
-
-</a></div>";
-        
-     echo " </tr><br>";
-     
-       
-     ?>
-
-        
  
-  
-<?php }?>  
-    </section>
-  
+        <section id="page1">
+        <?php while($dado = $con -> fetch_array()){
+        ?>
+        
+        <?php 
+        
+        echo "<div  id='meio'><tr ><td >Enviado por:".$dado["userOR"]."</td> <br>";
+        echo "<td >Valor:$".$dado['orca']."</td>";
+        echo "<a style='position:absolute; top:25px;left:175px;' href='detalhes.php?codigo=$dado[Peid]'>
+            
+        <img src='../imagens/Vector.png'>       
+        <img style='position:absolute; left: 90px; top:70px; height: 50px;' src='../imagens/ant-design_plus-circle-outlined.png'>
+
+    </a></div>";
+            
+        echo " </tr><br>";
+        
+        
+        ?>
+
+            
+    
+    
+    <?php }?>  
+        </section>
+    
     <section id="page2" style="display:none;">
     <?php
       

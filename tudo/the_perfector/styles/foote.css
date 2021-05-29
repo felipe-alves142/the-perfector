@@ -3,14 +3,16 @@ footer
 {
     position: absolute;
     bottom: -10px;
-    width: 99%;
-    padding-top: 15px;
+    width: 100%;
+    padding-top:0px;
+    padding-right: 0;
     padding-left: 1%;
-    padding-bottom: 10px;
+    padding-bottom:0px;
     background: linear-gradient(to  left, rgb(011,073,216), rgb(175,043,248));
     color: white;
-    
     font-size: 10px;
+    
+    
     
 }
 
@@ -57,5 +59,8 @@ footer div#b{
 div#cate{
     text-align: center;
     width: 100%;
-    margin-top: 10%;
+    
+}
+li{
+    padding: 1px;
 }
