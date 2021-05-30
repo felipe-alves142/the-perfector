@@ -17,27 +17,27 @@
             <span> </span>
             <span> </span>
         </div>
+            
+            <div class="tools tools--hidden">
+                <!-- Pencil Filled icon by Icons8 -->
+                <a href="dashboardEmpresa.php">
+                <p class="icon pen" width="32" height="32" >Empresa</p>
+            
+                </a>
 
-        <div class="tools tools--hidden">
-            <!-- Pencil Filled icon by Icons8 -->
-            <a href="dashboardEmpresa.php">
-            <p class="icon pen" width="32" height="32" >Empresa</p>
-          
-            </a>
+                <!-- Trash icon by Icons8 -->
+                <a href="profile.php">
+                    <p class="icon trash" width="32" height="32">Perfil</p>
+                </a>
 
-            <!-- Trash icon by Icons8 -->
-            <a href="profile.php">
-                <p class="icon trash" width="32" height="32">Perfil</p>
-            </a>
+                <!-- Invisible icon by Icons8 -->
+                <a href="includes/logout.inc.php">
+                    <p class="icon hidden" width="32" height="32" >Sair</p></a>
 
-            <!-- Invisible icon by Icons8 -->
-            <a href="includes/logout.inc.php">
-                <p class="icon hidden" width="32" height="32" >Sair</p></a>
-
-            <!-- About icon by Icons8 -->
-            <a href="#">
-                <p class="icon help" width="32" height="32" ></p> </a>
-
+                <!-- About icon by Icons8 -->
+                <a href="#">
+                    <p class="icon help" width="32" height="32" ></p> </a>
+           
             <!-- Share icon by Icons8 -->
             <a href="#">
             <img class="icon share" width="32" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCA
@@ -48,7 +48,7 @@
                 AAAElFTkSuQmCC">
             </a>
 
-        </div>
+        </>
 
     </div>
 

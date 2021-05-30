@@ -18,11 +18,11 @@
     <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="shortcut icon" type="image/icon" href="../imagens/logo-icon.svg"> 
-    <link rel="stylesheet" href="../styles/dashboar.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
     <link rel="stylesheet" href="../styles/foote.css">
-    
 </head>
 <body>
+
 <script>
   function showPage(page){
 					document.querySelectorAll('section').forEach(section => {
@@ -47,23 +47,24 @@
 
 </script>
     <style>
-            a{
-                text-decoration: none;
-                color: black;
-            }
-            footer{
-            top:1000px;
-            height: 200px;
-            }
+        li{
+            list-style-type: none;
+        }      
+        .menu{
+            top: -228px;
+        }
+        footer{
+            bottom: -390px;
+        }
     </style>
     
    <div id="topdash" style="display:block;">
         <ul>
-         <li><a href="display.php" style="text-decoration:none" >Explorar</a></li>
-         <li><a href="categorias.php" style="text-decoration:none">Categorias</a></li>
+         <li><a href="display.php" style="text-decoration:none" ><h6><strong>Explorar</strong> </h6></a></li>
+         
          <?php include_once "includes/menu.php";?>   
         </ul> 
-        
+   
         
         <!--<li><img id="prof" src="../imagens/usuario.png"></li>-->
        
@@ -79,34 +80,36 @@
   
         <div id="primary">
     <?php
-        include_once "includes/footer.php";          
+            
           if(isset($_SESSION["userid"])){
               include_once "includes/functions.inc.php";
-              echo "<p id='bvd'>Bem Vindo(a) ".$_SESSION["useruid"]."</p>";
+             echo "<h6 id='bvd'>Bem Vindo(a) ".$_SESSION["useruid"]."</h6>";
              
              }
 
     ?>
     <br>
     </div>
-    <ul>
-        <li id="re"><a   href="#" style="text-decoration:none" data-page="page1"><p>  Recebidos</p> </a></li>
-        <li id="ap"><a   href="#" style="text-decoration:none" data-page="page2"> <p>  Aprovados</p></a></li>
-        <li id="fi"><a   href="#" style="text-decoration:none" ><p>Finalizado</p></a></li>
-        
-    </ul>
+    <div style="position:absolute; left:380px; margin-top:50px;">
+        <ul>
+            <li id="re"><a   href="#" style="text-decoration:none" data-page="page1"><p> <strong>Recebidos</strong></p> </a></li>
+            <li id="ap"><a   href="#" style="text-decoration:none" data-page="page2"> <p>  <strong>Aprovados</strong></p></a></li>
+            <li id="fi"><a   href="#" style="text-decoration:none" ><p><strong> Finalizado</strong></p></a></li>
+            
+        </ul>
+    </div>
     <?php 
-    echo "<a href='https://web.whatsapp.com/send?phone= $_SESSION[telefone];' target='blank'><img id='chat' src='../imagens/chat.png'></a>"    ?>
-    <a href="pedido.php"><img id="cpe" src="../imagens/cpedido.png"></a>
+    echo "<a href='https://web.whatsapp.com/send?phone= $_SESSION[telefone];' target='blank'><img height='80px' id='chat' src='../imagens/cha.png'></a>"    ?>
+     <a href="pedido.php"><img id="cpe" src="../imagens/cpedido.png"></a>
     <br><br>
  
         <section id="page1">
         <?php while($dado = $con -> fetch_array()){
         ?>
-        
+        <br> <br>
         <?php 
-        
-        echo "<div  id='meio'><tr ><td >Enviado por:".$dado["userOR"]."</td> <br>";
+        echo "<h6 style='margin-left:585px; font-size:20px;'>Orçamentos recebidos</h6>";
+        echo "<div  id='meio' style='color:white;'><tr ><td >Enviado por:".$dado["userOR"]."</td> <br>";
         echo "<td >Valor:$".$dado['orca']."</td>";
         echo "<a style='position:absolute; top:25px;left:175px;' href='detalhes.php?codigo=$dado[Peid]'>
             
@@ -119,7 +122,7 @@
         
         
         ?>
-
+        
             
     
     
@@ -130,8 +133,10 @@
     <?php
       
         include_once "includes/finalizados.php";
+              
       ?>
         </div>  
-
+    
+            <?php  include_once "includes/footer.php";?>
 </body>
 </html>

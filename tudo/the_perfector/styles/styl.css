@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 body{
     margin: 0%;
-    font-family: Arial, Helvetica, sans-serif;
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    
+}
+
+div.bt{
+    float: right;
+    margin-right: 10%;
 }
 nav.navbar
 {
@@ -17,13 +23,6 @@ nav.navbar
     color: rgb(214, 79, 231);
 }
 
-ul 
-{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
   
   li 
 {
@@ -41,7 +40,9 @@ li.title a
     color: rgb(011, 073, 232);
     
 }
-  
+a{
+    color:black;
+}
 li a   
 {
     font-family: Arial, Helvetica, sans-serif;
@@ -50,9 +51,11 @@ li a
     text-align: center;
     padding: 25px 16px;
     text-decoration: none;
-    
+   
 }
-
+li{
+    list-style-type: none;
+}
 
 footer
 {
@@ -64,34 +67,22 @@ footer
     padding-bottom: 10px;
     background: linear-gradient(to  left, rgb(011,073,216), rgb(175,043,248));
     color: white;
-   
+    position: relative;
+    height: 25%;
+    
     
 }
 
-footer h1 a{
+footer h6 a{
     text-decoration: none;
     color: white;
 }
-
-footer div#a{
-    display: inline-block;
-}
-
-footer div#b{
-    display: inline-block;
-    
-}
-
 main.conteudo
 {
     margin-top: 1%;
     margin-bottom: 2%;
 }
 
-div.bt{
-    float: right;
-    margin-right: 10%;
-}
 
 button.cadastro {
     display: block;

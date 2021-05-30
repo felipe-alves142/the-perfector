@@ -26,14 +26,23 @@
         width: 250px;
         height: 40px;
     }
-    #page1{
-        
+    #page2{
         position: relative;
-        top: 180px;
-        left:800px;
-        
+        margin:200px 0 0 600px;
     }
-    
+    #page1{
+        position: relative;
+        margin:200px 0px 0px 600px;
+    }
+    li{
+        list-style: none;
+        display: inline-block;
+        padding:30px;
+    }
+    #mudar{
+        background: linear-gradient(to  left, #7367F0,#CE9FFC);
+
+    }
 </style>
     
 			<script>
@@ -72,32 +81,44 @@
         
         ?>
  <div id="page2" style="display:none;">
-            <form action="" method=""> <br>
+            <form action="includes/profile.inc.php" method="post"> <br>
                 <h5>Email:</h5> <br>
                 <input type="text" name="email" id="email"  value="<?php echo $dado['userEmail'];?>"> <br><br>
+                <input type="submit" id="mudar" value="Mudar Email"> <br> <br>
+            </form>
+            <form action="" method="">
                 <h5>Senha:</h5> <br>
                 <input type="text" name="" id="" placeholder="Senha"> <br> <br>
                 <h5>Repita a nova senha:</h5> <br>
-                <input type="text" name="" id="" placeholder="Repita a nova senha"> <br> <br><br><br><br>
+            
+                <input type="text" name=""  placeholder="Repita a nova senha"> <br> <br>
+                <input type="submit" value="Mudar Senha" id="mudar">    <br> <br>
+            </form>
+                 <form action="" method="post">
+                   <section style="background-color:#FBBCC8; padding:20px; width:400px;">
                     <h5>Apagar minha Conta:</h5> <br>
-                    <input type="text" name="" id="" placeholder="Digite Sua Senha">  <br>
+                    <input type="text" name="" id=""  placeholder="Digite Sua Senha">  <br> <br>
+                    <input type="submit" name="" id="" style="background-color:#EC5046; border-radius:7px; width:140px;" value="Apagar Conta"> 
+                  </section>
                 </form>
         </div>
         <div id="page1">
-            <form action="includes/profile.inc.php" method="post">
-              <h6>Email:</h6>
-              <?php echo $dado["userEmail"];?>
-              <h6>Celular:</h6>
-                <input type="number" name="celular" placeholder="celular">
-              <h3>Localização</h3> <br>
-                <input type="text" name="estado" placeholder="Estado">
-              <h6>Cidade</h6>
-                <input type="text" name="cidade" placeholder="cidade"> <br> </br>
-                <input type="submit" name="submit" value="Confirmar"> 
-                
-
-            </form>
-        </div>
+            <ul>
+                <li><strong>Email:</strong></li> 
+                    <?php echo $dado["userEmail"];?>
+                <li><strong>Celular:</strong></li>
+                    <?php echo $dado["celular"];?>
+            
+            </ul>
+            <h4 style="color:#747474;">Localização</h4>            
+            <ul>
+                <li><strong>Cidade:</strong></li>
+                    <?php echo $dado["cidade"];?>
+                <li><strong>Estado:</strong></li>
+                    <?php echo $dado["estado"];?> 
+            </ul>
+            
+      </div>
             
     <?php }?>
 </body>

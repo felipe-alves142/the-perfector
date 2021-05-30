@@ -81,16 +81,39 @@ button.cadastro {
     right: 100px;
 }
 form input#b{
-    background: linear-gradient(to  left, rgb(011,073,216), rgb(165, 11, 248));
-    border-radius: 0;
+    background: linear-gradient(271.58deg, #0B49D8 13.96%, #AF2BF8 80.82%);
+    border-radius: 8px;
     font-size: 14pt;
     color: #ffffff;
-    width: 40%;
+    left: 0%;
+    height: 50px;
+    width: 370px;
     right: 500px;
     border: 0;
+    margin-left: 20%;
 }
 form{
-    margin-top: 20px;
+    margin-top: 200px;
     margin-left: 10% ;
     margin-right: 10%;
 }  
+a{
+    margin-top: 20px;
+    margin-left: 10% ;
+    margin-right: 10%;
+}
+#location{
+    position: absolute;
+    top:120px;
+    
+
+}
+#dadosp{
+    margin-left: 50%;
+    margin-top: -15%;
+}
+
+#senhas{
+    margin-left: 50%;
+    margin-top: -25%;
+}

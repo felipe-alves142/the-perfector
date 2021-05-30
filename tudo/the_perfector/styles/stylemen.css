@@ -9,7 +9,7 @@ main{
     position:absolute;
     margin: 15em auto 0 auto;
     
-    background-color: white;
+   
     width: 70px;
     border-radius: 25px;
     transition: 0.3s border-radius ease-in-out, 0.3s height ease-in-out;
@@ -18,7 +18,6 @@ main{
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    top:-240px;
     left: 1280px;
  }
 

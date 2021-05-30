@@ -21,7 +21,7 @@
      ?>
        <?php 
      
-     echo "<div  id='meio'><tr ><td >Enviado por:".$dado["userOR"]."</td> <br>";
+     echo "<div  id='meio' style='color:white;'><tr ><td >Enviado por:".$dado["userOR"]."</td> <br>";
      echo "<td >Valor:$".$dado['orca']."</td> <br>";
      echo "<a href='https://web.whatsapp.com/send?phone= $_SESSION[telefone];' target='blank'>Chat</a>";
      echo "

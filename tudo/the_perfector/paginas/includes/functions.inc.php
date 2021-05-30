@@ -2,10 +2,10 @@
 <?php
 
 /*Cadastro validação */
-function emptyInputSignup($user,$senha,$repsenha,$email){
+function emptyInputSignup($user,$senha,$repsenha,$email,$estado,$cidade,$cpf,$data,$celular){
     /*Funçao que checa se os campos estão vazios */
     $result = "";
-    if(empty($user) || empty($senha) || empty($repsenha) || empty($email)){
+    if(empty($user) || empty($senha) || empty($repsenha) || empty($email) || empty($estado) || empty($cidade) || empty($cpf) || empty($data) || empty($celular) ){
         $result = true;
     }
 else{
@@ -89,11 +89,11 @@ else{
 }
 mysqli_stmt_close($stmt);
 }
-function createUser($conn,$email,$user,$senha){
+function createUser($conn,$email,$user,$senha,$estado,$cidade,$cpf,$data,$celular){
     /*Criando uma conta no bd
     adicinando dados no bd
     */
-    $sql = "INSERT INTO users (userUid,userEmail,userPwd) VALUES (?,?,?);";
+    $sql = "INSERT INTO users (userUid,userEmail,userPwd,estado,cidade,cpf,dataNascimento,celular) VALUES (?,?,?,?,?,?,?,?);";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt,$sql)){
     header("location: ../signup.php?error=stmtfalho");
@@ -101,7 +101,7 @@ function createUser($conn,$email,$user,$senha){
 }   
     $hashPass = password_hash($senha,PASSWORD_DEFAULT); 
     // código que disfarça a senha no banco de dados
-    mysqli_stmt_bind_param($stmt,"sss",$user,$email ,$hashPass);
+    mysqli_stmt_bind_param($stmt,"ssssssss",$user,$email ,$hashPass,$estado,$cidade,$cpf,$data,$celular);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location: ../signup.php?error=none");
@@ -216,27 +216,28 @@ function mudaStatus($conn,$status){
     
     exit();
 }
-function dadosVazios($celular,$estado,$cidade){
-    $result ="";
-    if(empty($celular) || empty($estado) || empty($cidade)){
-        $result = true;
-    }else{
-        $result = false;
-    }
-    return $result;
-}
-
-function guardaNovosDados($conn,$celular,$estado,$cidade,$codigo){
-    $sql ="UPDATE users SET celular = '$celular' WHERE userId = $codigo;";
+/*
+    $sql = "SELECT * FROM users WHERE userEmail = ?;";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt,$sql)){
-        header('location: ../profile.php?error=stmtfalho');
+        header("location: ../profile.php?error=dadoscadastrados");
         exit();
+    }else{
+        header("location: ../profile.php?error=none");
+        exit();    
     }
-   
-  //  mysqli_stmt_bind_param($stmt,"ii",$celular,$codigo);
+    mysqli_stmt_bind_param($stmt, "s" , $email);
     mysqli_stmt_execute($stmt);
+    
+    $resulData = mysqli_stmt_get_result($stmt);
+
+    if($row = mysqli_fetch_assoc($resulData)){
+        return $row;
+    }else{
+        $result = false;
+        return $result;
+    }
     mysqli_stmt_close($stmt);
-    header('location: ../dashboars.php');
-    exit();
+
 }
+

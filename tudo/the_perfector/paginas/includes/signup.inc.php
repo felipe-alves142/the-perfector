@@ -5,12 +5,17 @@ if (isset($_POST["submit"])){
     $senha = $_POST["senha"];
     $repsenha=$_POST["repSenha"];
     $email = $_POST["email"];
-
+    $estado = $_POST["estado"];
+    $cidade = $_POST["cidade"];
+    $cpf=$_POST["cpf"];
+    $data = $_POST["data"];
+    $celular = $_POST["celular"];
+    
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
 
 
-    if(emptyInputSignup($user,$senha,$repsenha,$email) !== false){
+    if(emptyInputSignup($user,$senha,$repsenha,$email,$estado,$cidade,$cpf,$data,$celular) !== false){
         header("location: ../signup.php?error=Campovazio");
         exit();
     }   
@@ -35,7 +40,7 @@ if (isset($_POST["submit"])){
         exit();
     }
     /*Criando um novo usuario no banco de dados */
-    createUser($conn,$email,$user,$senha);
+    createUser($conn,$email,$user,$senha,$estado,$cidade,$cpf,$data,$celular);
 }
 else {
     header("location: ../signup.php");

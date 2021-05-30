@@ -1,0 +1,112 @@
+#bvd{
+    position:relative;
+    margin-top: 120px;
+    top:13px;
+    margin-left:610px;
+}
+
+li{
+    list-style-type: none;
+}
+#topdash{
+    
+    padding: 6px 0px 0px 0px;
+    width: 100%;
+    
+}
+#topdash li{
+    list-style: none;
+    position: relative;
+    display: inline-block;
+    padding-left:15px;
+}
+
+
+#menu{
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    top: -1px;
+    right: 20px;
+}
+#subm{
+    display: none;
+}
+#menu:hover #subm{
+    display: block;
+}
+
+#chat{
+    position: relative;
+    top: 300px;
+    left: 1000px;
+    
+}
+
+#cpe{
+    position: relative;
+    top: 400px;
+    left: 925px;
+    
+}
+a{
+    position: relative;
+    text-decoration: none;
+}
+
+#re,#ap,#fi{
+    display: inline-block;
+   
+}
+#re{
+
+    position: relative;
+    background-color:#e1effa;
+    left: -20px;
+    border-radius: 25px;
+    padding: 20px;
+    width: 180px;
+    height: 60px;
+    
+    box-shadow: -2px 3px 9px rgba(0, 0, 0, 0.25);
+}
+#ap {
+    position: relative;
+    background-color:#e1effa;
+    border-radius: 25px;
+    padding: 20px;
+    width: 180px;
+    height: 60px;
+    box-shadow: -2px 3px 9px rgba(0, 0, 0, 0.25);
+}
+#fi {
+    position: relative;
+    background-color:#e1effa;
+    border-radius: 25px;
+    left: 20px;
+    padding: 20px;
+    width: 180px;
+    height: 60px;
+    box-shadow: -2px 3px 9px rgba(0, 0, 0, 0.25);
+}
+li p{
+    position:relative;
+    right:0px;
+    top: -25px;
+    left: 20px;
+}
+#meio{
+    background-color:#59e068;
+    width: 320px;
+    height: 150px;
+    padding: 20px;
+    position: relative;
+    left:645px;
+    border-radius: 7px;
+    margin-top:30px;
+    margin-left: -8%;
+    
+   
+    
+}
+/* Media Queries: Tablet Landscape */

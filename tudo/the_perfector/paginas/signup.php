@@ -13,7 +13,7 @@
 
 <body>       
 <style>
- 
+
     
 </style>
 
@@ -59,6 +59,21 @@ if(isset($_GET["error"])){
     <main>
           <h2>Cadastro</h2>
         <form action="includes/signup.inc.php" method="post">
+        <div id="location">
+                <h3>Localização</h3> <br>
+                    <input type="text" name="estado" placeholder="Estado">
+                <h6>Cidade</h6>
+                    <input type="text" name="cidade" placeholder="cidade"> <br> </br>
+        </div>
+        <div id="dadosp">
+
+            <p>CPF</p>
+                <input type="text" name="cpf" placeholder="CPF">
+            <p>Data de nascimento</p>
+                <input type="date" name="data" planceholder="Data de nascimento">
+        </div>
+        <br> <br>
+        <hr>
             <p for="usuario">Usuário</p>
                 <br>
             <input type="text" name="usuario" placeholder="Usuário">     
@@ -67,21 +82,27 @@ if(isset($_GET["error"])){
             <p for="email">E-mail</p>
                 <br>
             <input type="email" name="email" placeholder="Seu Email">
+            <p>Celular</p>
+            <input type="number" name="celular" placeholder="Celular">
                 <br>
-            <p for="senha">Senha</p>
-                <br>
-            <input type="password" name="senha" id="se" placeholder="Senha" maxlength="8">
+            <div id="senhas">        
+                <p for="senha">Senha</p>
+                    <br>
+                <input type="password" name="senha" id="se" placeholder="Senha" maxlength="8">
+            
                 <ul>
                     <li id="mx">Máximo 8 digitos</li><br>
                     <li id="mn">Deve ter 2 números</li><br>
                     <li id="mc">Deve ter estes caracteres especiais: @!%;:.</li>
                 </ul>
             <input type="password" name="repSenha" placeholder="Repita a Senha" maxlength="8">
+            </div>
             <br> <br>
-            <input type="submit"  name="submit" value="Cadastrar" id="b">
+              <input type="submit"  name="submit" value="Cadastrar" id="b">
 
         </form>
-        <a href="../paginas/includes/login.php">Já tem conta? Entre!</a>
+        
+        <a  href="../paginas/includes/login.php" style="color:white; ">Já tem conta? Entre!</a>
         </main>
    
     
