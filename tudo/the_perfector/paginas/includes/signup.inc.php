@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST["submit"])){
+if (isset($_POST["submit"])){    
     $user = $_POST["usuario"];
     $senha = $_POST["senha"];
     $repsenha=$_POST["repSenha"];

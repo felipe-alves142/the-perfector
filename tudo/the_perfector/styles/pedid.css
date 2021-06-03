@@ -3,6 +3,7 @@ input{
     background-color: white;
     border-radius: 7px;
 }
+
 input:hover{
     background-color: white;
     
@@ -13,7 +14,8 @@ input:hover{
     padding: 20px;
     height:20px;
 }
-h1{
+
+h3{
     text-align: center;
     padding-bottom: 50px;
 }
@@ -26,28 +28,21 @@ h1{
     left: 400px;
     top: 10px;
 }
-#con{
-    background-color:#04e761;
-    border-radius: 15px;
-    top: 600px;
-    padding: 15px;
-    width: 200px;
-    height: 10px;
-    position: absolute;
-    left: 700px;
-    
-}
+
 select, label{
     position: relative;
-    background-color: #e1effa;
     padding-left: 15px;
     border: 0px;
 }
 #c{
-    position: relative;
-    right: -45px;
-    top: -12px;
+    
+    position: absolute;
+    width: 250px;
+    height: 30px;
+    left: 600px;
+    top: 600px;
     background-color:#04e761;
+    
 }
 
 li{
@@ -59,45 +54,69 @@ textarea{
     width: 300px;
     height: 150px;
     background-color: #e1effa;
+    border: 0px;
+    border-radius: 8px;
 }
 #subc{
-    background-color: #e1effa;
-    width: 250px;
+    position: static;
+    width: 350px;
+    height: 35px;
+    left: 0px;
+    top: 148px;
+    background-color:#E1EFFB;
+    color:#707070;
+    
+    flex: none;
+    order: 2;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 20px 0px;
 }
 #in input{
     width:0;
     height:0;
 }
+#in label:hover{
+    background-color:#2AE876;
+    color:white ;
+}
 label{
-    border-radius: 25px;
-    height:50px;
-    padding:10px;
+    padding:15px;
+    background: #EDF6F9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    position:relative;
+    width: 190px;
+    height: 55px;
+
  
 }
 #ps{
-    border-radius: 25px;
-    position: relative;
-    top:-48px;
-    left: 170px; 
+    
+    top:-0px;
+    left: 0px; 
 }
 
 #ps1{
-    border-radius: 25px;
-    position: relative;
-    top:-97px;
-    left:350px; 
+    
+    top:-55px;
+    left:400px; 
 }
 
 #ps2{
-    border-radius: 25px; 
-    position: relative;
-    top:-100px;
-    left:170px; 
+    
+    top:-50px;
+    left:200px; 
 }
 
 #ps3{
-    border-radius: 25px;
-    position: relative;
-    top: -175px;
-    left:0px; 
+   
+left: -0px;
+top: -130px;
+
+
 }
+input[type="file"] {
+    display: none;
+  }
+  

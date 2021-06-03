@@ -216,28 +216,56 @@ function mudaStatus($conn,$status){
     
     exit();
 }
-/*
+
+function emailExist($conn,$email){
+    /*Checando se o usuario ou email existe*/
     $sql = "SELECT * FROM users WHERE userEmail = ?;";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt,$sql)){
-        header("location: ../profile.php?error=dadoscadastrados");
-        exit();
-    }else{
-        header("location: ../profile.php?error=none");
-        exit();    
-    }
-    mysqli_stmt_bind_param($stmt, "s" , $email);
-    mysqli_stmt_execute($stmt);
-    
-    $resulData = mysqli_stmt_get_result($stmt);
+    header("location: ../signup.php?error=dadoscadastrados");
+    exit();
+}   
+  /* */
+  mysqli_stmt_bind_param($stmt,"s",$email);
+  mysqli_stmt_execute($stmt);
 
-    if($row = mysqli_fetch_assoc($resulData)){
-        return $row;
-    }else{
-        $result = false;
-        return $result;
+  $resulData = mysqli_stmt_get_result($stmt);
+
+
+if($row = mysqli_fetch_assoc($resulData)){
+    return $row;
+}
+else{
+    $result = false;
+    return $result;
+}
+mysqli_stmt_close($stmt);
+}
+function mudaEmail($conn,$email,$cara){
+    $sql = "UPDATE users SET userEmail = ? WHERE userUid = ?;";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        header("location: ../profile.php?error=stmtfalho");
+        exit();
     }
+    mysqli_stmt_bind_param($stmt,"ss",$email,$cara);
+    mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
+    header("location: ../profile.php?error=none");
+    exit();
 
 }
-
+function mudaSenha($conn,$senha,$cara){
+    $sql = "UPDATE users SET userPwd = ? WHERE userUid = ?;";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        header("location: ../profile.php?error=stmtfalho");
+        exit();
+    }
+    
+    mysqli_stmt_bind_param($stmt,"ss",$senha,$cara);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location: ../profile.php?error=none");
+    exit();
+}

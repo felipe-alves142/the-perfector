@@ -83,16 +83,17 @@
  <div id="page2" style="display:none;">
             <form action="includes/profile.inc.php" method="post"> <br>
                 <h5>Email:</h5> <br>
-                <input type="text" name="email" id="email"  value="<?php echo $dado['userEmail'];?>"> <br><br>
-                <input type="submit" id="mudar" value="Mudar Email"> <br> <br>
+                <input type="text" name="email" id="email"  placeholder="<?php echo "Email Atual:". $dado['userEmail'];?>"> <br><br>
+                <input type="submit" name="submit" id="mudar" value="Mudar Email"> <br> <br>
             </form>
-            <form action="" method="">
+            
+            <form action="includes/profile.inc.php" method="post">
                 <h5>Senha:</h5> <br>
-                <input type="text" name="" id="" placeholder="Senha"> <br> <br>
+                <input type="password" name="senha" id="senha" placeholder="Senha"> <br> <br>
                 <h5>Repita a nova senha:</h5> <br>
             
-                <input type="text" name=""  placeholder="Repita a nova senha"> <br> <br>
-                <input type="submit" value="Mudar Senha" id="mudar">    <br> <br>
+                <input type="password" name="repSenha"  id="repSenha" placeholder="Repita a nova senha"> <br> <br>
+                <input type="submit" name="submit" value="Mudar Senha" id="mudar">    <br> <br>
             </form>
                  <form action="" method="post">
                    <section style="background-color:#FBBCC8; padding:20px; width:400px;">
@@ -101,7 +102,8 @@
                     <input type="submit" name="" id="" style="background-color:#EC5046; border-radius:7px; width:140px;" value="Apagar Conta"> 
                   </section>
                 </form>
-        </div>
+      
+            </div>
         <div id="page1">
             <ul>
                 <li><strong>Email:</strong></li> 
@@ -121,5 +123,21 @@
       </div>
             
     <?php }?>
+    <?php
+     if(isset($_GET["error"])){ 
+        if($_GET["error"] == "dadoscadastrado"){
+            echo "<div id='msg' class='alert alert-danger' role=''alert>Email ja cadastrado!</div>";
+        }
+        if($_GET["error"] == "senhadesigual"){
+            echo "<div id='msg' class='alert alert-danger' role=''alert>Senha Desigual!</div>";
+        }
+        if($_GET["error"] == "senhainvalida"){
+            echo "<div id='msg' class='alert alert-danger' role=''alert>Senha Inválida!</div>";
+        }
+        if($_GET["error"] == "emailinvalido"){
+            echo "<div id='msg' class='alert alert-danger' role=''alert>Email Inválido!</div>";
+        }
+    }
+    ?> 
 </body>
 </html>
