@@ -81,7 +81,8 @@ footer{
     height: 200px;
 }
 </style>
-   <a href="dashboard.php"> <img src="../imagens/back-button.png" style="position:fixed; top:10px; width:180px;"> </a>
+<a href="dashboard.php"> <img src="../imagens/back-button.png" style="position:fixed; top:10px; width:180px;"> </a>
+
     <h5 style="position:fixed; top:60px; margin-top:100px; margin-bottom:100px; margin-left:180px;">Pedidos Enviados</h5> 
     <div id="filtro">
         <form action="display.php" method="post">
