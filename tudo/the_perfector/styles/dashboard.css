@@ -22,13 +22,13 @@ li{
 }
 
 
-#menu{
+/* #menu{
     padding: 0px;
     margin: 0px;
     position: absolute;
     top: -1px;
     right: 20px;
-}
+} */
 #subm{
     display: none;
 }
@@ -39,7 +39,7 @@ li{
 #chat{
     position: relative;
     top: 300px;
-    left: 1000px;
+    left: 990px;
     
 }
 
@@ -67,7 +67,6 @@ a{
     padding: 20px;
     width: 180px;
     height: 60px;
-    
     box-shadow: -2px 3px 9px rgba(0, 0, 0, 0.25);
 }
 #ap {
@@ -98,7 +97,7 @@ li p{
 #meio{
     background-color:#59e068;
     width: 320px;
-    height: 150px;
+    height: 180px;
     padding: 20px;
     position: relative;
     left:645px;
@@ -109,4 +108,96 @@ li p{
    
     
 }
-/* Media Queries: Tablet Landscape */
+#meio2{
+    background: #3994FF;
+    width: 320px;
+    height: 180px;
+    padding: 20px;
+    position: relative;
+    left:645px;
+    border-radius: 7px;
+    margin-top:80px;
+    margin-left: -8%;
+    
+   
+    
+}
+@media only screen and (max-width:700px){
+    #re,#ap,#fi{
+        left: -400px;
+        margin-bottom: 20px;
+        width:150px;
+    }
+    #chat{
+        left:50px;
+    }
+    #cpe{
+        left:60px;
+        top:300px;
+    }
+    li p{
+    
+        left:10px;
+        margin-bottom: 100px;
+    }
+    #meio{
+        background-color:#59e068;
+        width: 280px;
+        height: 180px;
+        padding: 10px;
+        position: relative;
+        left:220px;
+        top:-100px;
+        border-radius: 7px;
+        margin-top:40px;
+        margin-left: -5%;
+        
+    }
+    #meio2{
+        background: #3994FF;
+        width: 320px;
+        height: 180px;
+        padding: 20px;
+        position: relative;
+        left:220px;
+        top:-100px;
+        border-radius: 7px;
+        margin-top:80px;
+        margin-left: -8%;
+        
+       
+        
+    }
+    footer{
+        overflow-x: hidden;
+        overflow-y:hidden;
+        display: none;
+    }
+    #imgVetor{
+        position:absolute;
+        width:100px;
+        margin-top: 40px;
+        margin-left: 5px;
+        
+        
+    }
+    #bvd{
+        top:-30px;
+        padding:5px;
+        left:-600px;
+    }
+    #plusImg{
+        position: relative;
+        margin-top: 10px;
+        margin-left: -45px;
+        
+    }
+    #tituloOrcamento{
+        position:absolute;
+        top: 210px;
+        left:-350px;
+    }
+    #menu{
+        left:130px;
+    }
+}

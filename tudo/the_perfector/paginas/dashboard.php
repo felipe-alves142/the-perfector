@@ -49,25 +49,28 @@
     <style>
         li{
             list-style-type: none;
+            
         }      
         .menu{
             top: -228px;
+            left: -10px;
         }
         footer{
-            bottom: -390px;
+            bottom: -200px;
+            overflow-x: hidden;
+            overflow-y:hidden;
         }
     </style>
     
    <div id="topdash" style="display:block;">
         <ul>
          <li><a href="display.php" style="text-decoration:none" ><h6><strong>Explorar</strong> </h6></a></li>
+        <div id='menu'>
+            <?php include_once "includes/menu.php";?>   
+        </div> 
          
-         <?php include_once "includes/menu.php";?>   
         </ul> 
-   
-        
-        <!--<li><img id="prof" src="../imagens/usuario.png"></li>-->
-       
+         
         <ul id="subm">    
             <?php
               echo "<li><a href='dashboardEmpresa.php'>Empresa</a></li><br>";  
@@ -75,7 +78,9 @@
               echo "<li><a href='includes/logout.inc.php'>Sair</a></li><br>";
                 
             ?>
-            
+        
+        <!--<li><img id="prof" src="../imagens/usuario.png"></li>-->
+
   </ul>
   
         <div id="primary">
@@ -90,7 +95,7 @@
     ?>
     <br>
     </div>
-    <div style="position:absolute; left:380px; margin-top:50px;">
+    <div  style="position:absolute; left:380px; margin-top:50px;">
         <ul>
             <li id="re"><a   href="#" style="text-decoration:none" data-page="page1"><p> <strong>Recebidos</strong></p> </a></li>
             <li id="ap"><a   href="#" style="text-decoration:none" data-page="page2"> <p>  <strong>Aprovados</strong></p></a></li>
@@ -99,7 +104,7 @@
         </ul>
     </div>
     <?php 
-    echo "<a href='https://web.whatsapp.com/send?phone= $_SESSION[telefone];' target='blank'><img height='80px' id='chat' src='../imagens/cha.png'></a>"    ?>
+    echo "<a href='https://web.whatsapp.com/send;' target='blank'><img height='60px' id='chat' src='../imagens/cha.png'></a>"    ?>
      <a href="pedido.php"><img id="cpe" src="../imagens/cpedido.png"></a>
     <br><br>
  
@@ -108,13 +113,13 @@
         ?>
         <br> <br>
         <?php 
-        echo "<h6 style='margin-left:585px; font-size:20px;'>Orçamentos recebidos</h6>";
+        echo "<h6 style='margin-left:585px; font-size:20px;' id='tituloOrcamento'>Orçamentos recebidos</h6>";
         echo "<div  id='meio' style='color:white;'><tr ><td >Enviado por:".$dado["userOR"]."</td> <br>";
         echo "<td >Valor:$".$dado['orca']."</td>";
         echo "<a style='position:absolute; top:25px;left:175px;' href='detalhes.php?codigo=$dado[Peid]'>
             
-        <img src='../imagens/Vector.png'>       
-        <img style='position:absolute; left: 90px; top:70px; height: 50px;' src='../imagens/ant-design_plus-circle-outlined.png'>
+        <img src='../imagens/Vector.png' style='position:absolute; left:0px; top:30px;' id='imgVetor'>       
+        <img style='position:absolute; left: 90px; top:90px; height: 50px;' src='../imagens/ant-design_plus-circle-outlined.png' id='plusImg'>
 
     </a></div>";
             
@@ -137,6 +142,6 @@
       ?>
         </div>  
     
-            <?php  include_once "includes/footer.php";?>
+              <?php  include_once "includes/footer.php";?>
 </body>
 </html>

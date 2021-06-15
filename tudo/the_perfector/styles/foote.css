@@ -46,8 +46,7 @@ footer
     color: white;
     height: 25%;    
     position:relative;
-    width: 100%;
-    
+    width: 99%;
 }
 
 footer h6 a{
@@ -59,7 +58,17 @@ main.conteudo
     margin-top: 1%;
     margin-bottom: 2%;
 }
-
+@media only screen and (max-width:700px){
+    #listas{
+        position: relative;
+        left:80px;
+    }
+    #listaReclame{
+        position: relative;
+        top: 100px;
+        left:-188px;
+    }
+}
 
 
 

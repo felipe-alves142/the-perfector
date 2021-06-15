@@ -12,10 +12,11 @@
     
     </head>
 <body>
+     <br> <br> <br> <br><br>
     <h3>Novo Pedido</h3>
     
 
-
+    <a href="dashboard.php"> <img src="../imagens/back-button.png" style="position:fixed; top:10px; width:180px;"> </a>
     <div id="liorca"> 
        
     <form action="includes/pedido.inc.php" method="post">
@@ -54,18 +55,24 @@
         <br> <br>
        <h6>Orçamento</h6> 
         <div id="in">
-        <script>
+        <!-- <script>
        function menuClick(label) {
         var x = document.querySelector(".primary")
             const texto = label.id;
-            console.log(texto);
+            //console.log(texto);
       
             let tag = document.getElementById(texto);    
-            tag.style.backgroundColor='#2AE876';
-        
-      
-       }
-       </script>
+            let filledArray = new Array(1).fill(texto);
+            console.log(filledArray)
+
+        const reduced = [filledArray].reduce((prev,next) =>{
+            console.log(prev + next);
+            return prev + next
+        },10)
+        console.log(reduced)
+        }
+       
+       </script> -->
         <input type="radio"  id="p1" name="pedido"    value="Menos de R$ 300,00">
         <label for="p1" id='lb1' class='primary' onclick= "menuClick(this)"  >
          

@@ -2,7 +2,7 @@
 session_start();
 if(isset($_POST["submit"])){
     $email = $_POST["email"];
-    $cara = $_SESSION["useruid"];
+    $cara = $_SESSION["userid"];
     $id= $_SESSION["userid"];
     $senha = $_POST["senha"];
     $repSenha = $_POST["repSenha"];

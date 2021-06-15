@@ -18,13 +18,16 @@
   <nav class="navbar">
     <ul>
       <li class="title"><a href="index.php"><img src="../imagens/logo-icon-circle.svg" width="71px"></a></li>
+      <div class="links">
+          <li><a href="#" >Home</a></li>
+          <li><a href="#comoF" >Como funciona</a></li>
 
-      <li><a href="#">Home</a></li>
-      <li><a href="#comoF">Como funciona</a></li>
+      </div>
+      
     <!--  <li><a href="#cate">Categorias</a></li>
-        -->    
+        -->     
       <div class="bt">
-      <li><a href='../paginas/signup.php'><button class='cadastro'>Cadastrar-se</button></a></li>
+      <li><a href='../paginas/signup.php'><button class='cadastro'>Cadastro</button></a></li>
       <li><a href='includes/login.php' ><button class='entrar'>Entrar</button></a></li>
       
       </div>
@@ -83,7 +86,7 @@
     </div>
 
     <div id="textbox2" class="textbox">
-      <img src="../imagens/Star.png" alt="estrela">
+      <!-- <img src="../imagens/Star.png" alt="estrela" class="star"> -->
         <div class="text">
           <h2>Lorem ipsum dolor</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Laoreet nisl nulla montes, dignissim massa rutrum id.</p>
@@ -94,14 +97,14 @@
 
       <div class="text">
         <h2>Lorem ipsum dolor</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Laoreet nisl nulla montes, dignissim massa rutrum id.</p>
+        <p id="tx2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Laoreet nisl nulla montes, dignissim massa rutrum id.</p>
       </div>
-      <img src="../imagens/Shield.png" alt="escudo">
+      <!-- <img src="../imagens/Shield.png" alt="escudo" class="shield"> -->
       
     </div>
 
     <div id="textbox4" class="textbox">
-      <img src="../imagens/hand.png" alt="mão">
+      <!-- <img src="../imagens/hand.png" class="fingers" alt="mão"> -->
       <div class="text">
         <h2>Lorem ipsum dolor</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Laoreet nisl nulla montes, dignissim massa rutrum id.</p>
@@ -122,17 +125,20 @@
       <div class="container">
 
         <a href=""><li>Assistencia Técnica</li></a> <br>
-      <a href=""><li>Serviços Domésticos</li></a> <br>
-        <a href=""><li>Reformas</li></a> 
+        <a href=""><li>Serviços Domésticos</li></a> <br> 
+        <a href=""><li>Reformas</li></a> <br>
     <div style="margin-left:20%; position:relative; top: -52px;">
       
         
   
-        
-        <a href=""><li>Design e Tecnologia</li></a> <br>
-        <a href=""><li>Saúde</li></a>
-    
-        <a href=""> <li>Beleza e Moda</li></a> <br>
+      <div id="listPosi">
+          <a href=""><li>Design e  Tecnologia</li></a> <br>
+        <a href=""><li>Saúde</li></a> 
+          
+      </div>  
+      
+     <a href=""> <li id='beleza'>Beleza e moda</li></a> <br>
+      
 
 </div>
       <div style="position:relative; top: -25px;">  

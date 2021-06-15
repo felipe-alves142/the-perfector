@@ -21,11 +21,13 @@
      ?>
        <?php 
      
-     echo "<div  id='meio' style='color:white;'><tr ><td >Enviado por:".$dado["userOR"]."</td> <br>";
+     echo "<div  id='meio2' style='color:white;'><tr ><td >Enviado por:".$dado["userOR"]."</td> <br>";
      echo "<td >Valor:$".$dado['orca']."</td> <br>";
      echo "<a href='https://web.whatsapp.com/send?phone= $_SESSION[telefone];' target='blank'>Chat</a>";
      echo "
-            
+     <img src='../imagens/Vectorf.png' style='position:absolute; left: 155px; top:65px;'>
+     <img style='position:absolute; left: 260px; top:120px; height: 50px;' src='../imagens/ant-design_plus-circle-outlined.png'>
+
      </div>";
               echo " </tr><br>";
      

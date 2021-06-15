@@ -3,7 +3,9 @@
 <?php   
     session_start();
     include("includes/dbh.inc.php");
-    $sql="SELECT * FROM pedido,orcamento WHERE status='Recebido' LIMIT 4;";
+    $nome= strval($_SESSION["useruid"]);
+
+    $sql="SELECT * FROM pedido,orcamento WHERE status='Recebido' AND pedidoUser <> '$nome';";
     $stmt=mysqli_stmt_init($conn);
     $con= mysqli_query($conn,$sql) or die(mysqli_error($conn));
     
@@ -13,8 +15,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,user-scalabre=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="shortcut icon" href="../imagens/logo-icon.svg" type="image/x-icon">
@@ -80,18 +83,73 @@ footer{
     top:1000px;
     height: 200px;
 }
+#back {
+        position:fixed;
+        top:10px;
+        width:180px;
+}
+ 
+@media only screen and (max-width:700px){
+   #back{
+       position:fixed;
+       top: 10px;
+       width:80px;
+   }
+   #filtro{
+    position:relative;
+     border-radius:15px; 
+     left: 80px;
+     padding:20px; 
+     top:250px; 
+     width:220px;
+     height: 250px;
+     background-color:#E1EFFB;
+     margin: 0;
+}
+/* #titulo2{
+    position: relative;
+    top: -60px;
+    left:200px;
+}
+input[name='Sub-categoria']{
+    position: relative;
+    background-color:red;
+    top: -60px;
+    left:200px;
+    
+} */
+   
+#da{
+    position:relative; 
+    left:50px;
+    padding-right: 100px;
+    width: 400px;
+    box-shadow: 5px 4px 6px 1px rgba(0, 0, 0, 0.25);
+    height: 300px;
+    top: 300px;
+    background-color: #E1EFFB;
+    border-radius: 10px;
+        } 
+#header5{
+    position:relative;
+    top:60px;
+    margin-top:100px;
+    margin-bottom:100px;
+    margin-left:180px;
+}          
+}
 </style>
-<a href="dashboard.php"> <img src="../imagens/back-button.png" style="position:fixed; top:10px; width:180px;"> </a>
+<a href="dashboard.php"> <img src="../imagens/back-button.png"  id="back" > </a>
 
-    <h5 style="position:fixed; top:60px; margin-top:100px; margin-bottom:100px; margin-left:180px;">Pedidos Enviados</h5> 
+    <h5 id="header5" style="position:fixed; top:60px; margin-top:100px; margin-bottom:100px; margin-left:180px;">Pedidos Enviados</h5> 
     <div id="filtro">
         <form action="display.php" method="post">
-            <h4>Filtrar Serviços</h4>
+            <h4 id="titulo1">Filtrar Serviços</h4>
                 <input type="text" name="filtrar">
-            <h4>Sub-Categoria:</h4>
+            <h4 id="titulo2">Sub-Categoria:</h4>
                 <input type="text" name="Sub-categoria">
             
-            <h4>Orcamento:</h4>
+            <h4 id="titulo3">Orcamento:</h4>
                 <select >
                     <option name="orca" value="Menos de R$ 300,00" selected>Menos de R$ 300,00</option>
                     <option value="R$ 301,00 à R$ 500,00">R$ 301,00 à R$ 500,00</option>

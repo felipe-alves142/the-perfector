@@ -18,6 +18,14 @@
     
 </head>
 <body>
+<style>
+    @media only screen and (max-width:700px){
+        h2{
+             margin-left: -50px;
+        }
+       
+    }
+</style>
     <img src="../imagens/user-avatar.png" style="width: 200px; position:absolute; left:87px; top:89px;">
     <h2 style="position:absolute; left:400px; top:160px; "><?php 
           if(isset($_SESSION["userid"])){

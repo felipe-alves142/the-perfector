@@ -18,7 +18,14 @@
         left:89px;
         
     }
-    
+    #back {
+        position:fixed;
+        top:10px;
+        left:10px;
+        margin-bottom: 20px;
+        width:120px;
+}
+ 
     input{
         border-radius: 7px;
         background-color:#F0F0F0;
@@ -35,6 +42,7 @@
         margin:200px 0px 0px 600px;
     }
     li{
+
         list-style: none;
         display: inline-block;
         padding:30px;
@@ -43,8 +51,34 @@
         background: linear-gradient(to  left, #7367F0,#CE9FFC);
 
     }
-</style>
-    
+    @media only screen and (max-width:700px){
+     a{
+         left: 10px;
+     }
+     #back {
+        position:relative;
+        top: -380px;
+        left:10px;
+        margin-bottom: 20px;
+        width:80px;
+}
+ 
+     #page1{
+        position: relative;
+        margin:200px 0px 0px 200px;
+    }
+    #page2{
+        position: relative;
+        margin:200px 0px 0px 200px;
+    }
+    #apagarForm{
+        position: relative;
+        width:280px;
+        background-color:#FBBCC8;
+        padding:20px;
+    }
+    }
+</style>        
 			<script>
 				function showPage(page){
 					document.querySelectorAll('div').forEach(div => {
@@ -66,7 +100,8 @@
 				   })
 				
 			   </script>
-          
+          <a href="dashboard.php"> <img src="../imagens/back-button.png"  id="back" > </a>
+
 
 			
     <?php include_once "includes/profileTop.php";?>
@@ -95,15 +130,15 @@
                 <input type="password" name="repSenha"  id="repSenha" placeholder="Repita a nova senha"> <br> <br>
                 <input type="submit" name="submit" value="Mudar Senha" id="mudar">    <br> <br>
             </form>
-                 <form action="" method="post">
-                   <section style="background-color:#FBBCC8; padding:20px; width:400px;">
+                 <form action="" method="post" >
+                   <section id="apagarForm">
                     <h5>Apagar minha Conta:</h5> <br>
                     <input type="text" name="" id=""  placeholder="Digite Sua Senha">  <br> <br>
-                    <input type="submit" name="" id="" style="background-color:#EC5046; border-radius:7px; width:140px;" value="Apagar Conta"> 
+                    <input type="submit" name=""  style="background-color:#EC5046; border-radius:7px; width:140px;" value="Apagar Conta"> 
                   </section>
                 </form>
       
-            </div>
+            </div>x
         <div id="page1">
             <ul>
                 <li><strong>Email:</strong></li> 

@@ -16,7 +16,7 @@
     </section>
 
     <main>
-        <h2>Login</h2>
+        <!-- <h2>Login</h2> -->
         <form action="login.inc.php" method="post">
             <p for="usuario">Usuário</p>
                 <br>
