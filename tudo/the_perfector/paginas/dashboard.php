@@ -26,7 +26,7 @@
 <script>
   function showPage(page){
 					document.querySelectorAll('section').forEach(section => {
-						section.style.display = 'none';
+                        section.style.display='none'
 					})
 					document.querySelector(`#${page}`).style.display = 'block';
 				}

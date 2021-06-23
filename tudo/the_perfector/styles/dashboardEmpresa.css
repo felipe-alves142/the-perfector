@@ -1,0 +1,137 @@
+
+footer{
+    bottom:auto;  
+    overflow-x: hidden;
+}
+li{
+    list-style: none;
+}
+#chats{
+    position: relative;
+    top: -50px;
+}
+#page2 .details img{
+    margin-left: 20rem;
+    margin-bottom:5px;
+}
+#page2 .details h5{
+  
+    margin-left: 10px;
+}
+.details #rankingStar , h5{
+    position: relative;
+    top: -40px;
+    margin-left: 60px;
+}
+.details h4, p{
+    margin-left:10px;
+}
+.details{
+    position: absolute;
+    width:25rem;
+    height:20rem;
+    left:20rem;
+    background: #F5F5F5;
+    box-shadow: 2px 4px 6px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+#sideMenuList{
+
+    position: relative;
+    margin-left:34px;
+    top: 35rem;
+    background-color: #E1EFFB;
+    width:180px;
+    height:150px;
+    padding:10px;
+}
+#sideMenuList a:hover{
+    background-color:#2AD1E8;
+    border-radius: 10px 100px 100px 10px;
+    height: 40px;
+    width: 280px;
+    padding: 8px;
+    margin:0;
+    filter: drop-shadow(8px 4px 16px rgba(0, 0, 0, 0.25))
+}
+
+.menu{
+    top:-220px;
+}
+#explorar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 50px;
+    position: absolute;
+    width: 150px;
+    height: 40px;
+    left: 409px;
+    top: 20rem;
+    background: #2AA0DA;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+#verMais svg{
+    position: relative;
+    left:5rem;
+    top:-0.7rem;
+}
+#verMais{
+    position: absolute;
+    left:0rem;
+    padding: 0.8rem;
+    width: 17.3rem;
+    height:3.2rem;
+    color:black;
+    background: #F1FCFF;
+    border-radius: 10px;
+
+}
+
+#trabalhos{
+    position: absolute;
+    width: 277px;
+    height: 214px;
+    left: 66px;
+    top: 5rem;
+    padding:30px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+section{
+    padding:25rem 0 10rem;
+    margin: auto;
+    position: relative;
+    margin-left:10rem ;
+    margin-bottom: 30rem;
+    
+}
+@media only screen and (max-width:700px){
+    section{
+        padding:50rem 0 5rem;
+        margin: auto;
+        position: relative;
+        margin-left:-18rem ;
+        margin-bottom: 30rem;
+        
+    }   
+    #explorar{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 14px 50px;
+        position: absolute;
+        width: 150px;
+        height: 40px;
+        left: 209px;
+        top: 20rem;
+        background: #2AA0DA;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+    }
+}

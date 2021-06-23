@@ -345,11 +345,7 @@ div.text{
         padding: 5%;
     }
     #listPosi{
-        display: none;
-    }
-    #beleza{
         position: relative;
-        top:100px;
-        left:-85px;
+        margin-left:8rem;
     }
 }

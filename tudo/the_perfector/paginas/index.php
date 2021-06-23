@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1,maximun-scale=1,user-scalabre=no">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-  <link rel="stylesheet" href="../styles/styl.css">
+  <link rel="stylesheet" href="../styles/st.css">
   
   
 
@@ -82,22 +82,25 @@
 
     <h1 id="oq">O que é o Perfecto?</h1>
     <div id="textbox1">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Laoreet nisl nulla montes, dignissim massa rutrum id. Pharetra, bibendum ipsum turpis amet, felis, in massa. Sollicitudin mauris nec porttitor ultrices viverra a, convallis integer facilisi. Risus, at suspendisse lacus mattis ultrices odio. Malesuada nibh risus ligula vitae posuere consequat amet.</p>
+      <p>
+      The perfector trata-se de um site de busca e divulgação de vagas de emprego.A plataforma tem como foco prover as ferramentas para clientes e empregadores fazerem um trabalho satisfatório.
+
+      </p>
     </div>
 
     <div id="textbox2" class="textbox">
       <!-- <img src="../imagens/Star.png" alt="estrela" class="star"> -->
         <div class="text">
-          <h2>Lorem ipsum dolor</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Laoreet nisl nulla montes, dignissim massa rutrum id.</p>
+          <h2>Cliente</h2>
+          <p>Você cliente anuncia sua necessidade e especifica um valor para o serviço.</p>
         </div>
     </div>
 
     <div id="textbox3" class="textbox">
 
       <div class="text">
-        <h2>Lorem ipsum dolor</h2>
-        <p id="tx2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Laoreet nisl nulla montes, dignissim massa rutrum id.</p>
+        <h2>Empresa</h2>
+        <p id="tx2">Você empresa pode atender a necessidade do cliente aceitando o orçamento proposto ou fazendo um novo.</p>
       </div>
       <!-- <img src="../imagens/Shield.png" alt="escudo" class="shield"> -->
       
@@ -106,8 +109,8 @@
     <div id="textbox4" class="textbox">
       <!-- <img src="../imagens/hand.png" class="fingers" alt="mão"> -->
       <div class="text">
-        <h2>Lorem ipsum dolor</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Laoreet nisl nulla montes, dignissim massa rutrum id.</p>
+        <h2>Ficou enteressado?</h2>
+      <p>Entre e ache seu próximo cliente ou resolva alguma necessidade sua.</p></p>
       </div>
     </div>                            
     
@@ -126,22 +129,22 @@
 
         <a href=""><li>Assistencia Técnica</li></a> <br>
         <a href=""><li>Serviços Domésticos</li></a> <br> 
-        <a href=""><li>Reformas</li></a> <br>
+        <a href=""><li>Reformas</li></a> 
     <div style="margin-left:20%; position:relative; top: -52px;">
       
         
   
       <div id="listPosi">
-          <a href=""><li>Design e  Tecnologia</li></a> <br>
-        <a href=""><li>Saúde</li></a> 
-          
-      </div>  
+        <a href=""><li>Design e  Tecnologia</li></a> <br>
+        <a href=""><li>Saúde</li></a> <br>
+        <a href=""> <li>Beleza e moda</li></a> <br>
+
+      </div>    <br>
       
-     <a href=""> <li id='beleza'>Beleza e moda</li></a> <br>
       
 
 </div>
-      <div style="position:relative; top: -25px;">  
+      <div style="position:relative; top: -75px;">  
         <a href=""> <li>Eventos</li></a> <br>
          <a href=""><li>Educação</li></a>
       </div>
