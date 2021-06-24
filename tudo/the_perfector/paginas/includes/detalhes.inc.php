@@ -6,7 +6,7 @@ session_start();
     require_once "functions.inc.php";
     require_once "dbh.inc.php";
 
-    $status = $_SESSION['status'];
+    $status = $_GET['status'];
     $cod = $_SESSION['co'];
     mudaStatus($conn,$status,$cod);
 

@@ -26,7 +26,7 @@
         <h6>Categoria</h6>
         <select name="categoria" id="subc">
         
-            <option value="" disabled selected>Categoria</option>
+            <option disabled selected>Categoria</option>
             <option value="Gerais">Gerais</option>
             <option value="Programação">Programação</option>
             <option value="Marcenaria">Marcenaria</option>
@@ -39,7 +39,7 @@
        </div>
         
             <select name="sub" id="subc">
-                <option value="" disabled selected>Sub-Categoria</option>
+                <option disabled selected>Sub-Categoria</option>
                 <option value="Ajudante">Ajudante<p></p></option>
                 <option value="Programador Web/Mobile">Programador Web/Mobile</option>
                 <option value="Pintor">Pintor</option>
@@ -73,24 +73,24 @@
         }
        
        </script> -->
-        <input type="radio"  id="p1" name="pedido"    value="Menos de R$ 300,00">
-        <label for="p1" id='lb1' class='primary' onclick= "menuClick(this)"  >
+        <input type="radio"  id="p1" name="pedido"  value="Menos de R$ 300,00">
+        <label for="p1" id='lb1' class='primary'>
          
             Menos de R$ 300,00
             
         </label>
 
         <input type="radio" id="p2" name="pedido"  value="R$ 301,00 a R$ 500,00"  >
-        <label id ="ps" for="p2" id='lb2' class='primary' onclick= "menuClick(this)"> <p>R$ 301,00 à R$ 500,00</p> </label><br>
+        <label id ="ps" for="p2" id='lb2' class='primary'> <p>R$ 301,00 à R$ 500,00</p> </label><br>
 
         <input type="radio" id="p3" name="pedido" value="R$ 501,00 a R$ 800,00" >
-        <label id="ps1" for="p3"  id='lb3' class='primary' onclick= "menuClick(this)">R$ 501,00 à R$ 800,00</label><br><br>
+        <label id="ps1" for="p3"  id='lb3' class='primary'>R$ 501,00 à R$ 800,00</label><br><br>
         
         <input type="radio" id="p4" name="pedido"  value="R$ 1200,00" >
-        <label id="ps2" for="p4"  id='lb4' class='primary' onclick= "menuClick(this)"  >Mais de R$ 1200,00</label><br> <br>
+        <label id="ps2" for="p4"  id='lb4' class='primary' >Mais de R$ 1200,00</label><br> <br>
 
         <input type="radio" id="p5" name="pedido"  value="R$ 801,00 a R$ 1200,00" >
-        <label id="ps3" for="p5"  id='lb5' class='primary' onclick= "menuClick(this)"  >R$801,00 à R$1200,00</label>
+        <label id="ps3" for="p5"  id='lb5' class='primary'>R$801,00 à R$1200,00</label>
         
             
         </div>

@@ -19,17 +19,17 @@ window.onload = function(){
         var mn = /[0-9]{2}/i
         var espe = /[@!%;:.]/i
         if(senha.value.length < 8){
-            document.getElementById("mx").style.color = "red";
+            document.getElementById("mx").style.color = "yellow";
         }else{
             document.getElementById("mx").style.color = "green";    
         }
         if(!senha.value.match(mn)) {
-            document.getElementById("mn").style.color = "red";    
+            document.getElementById("mn").style.color = "yellow";    
         }else{
             document.getElementById("mn").style.color = "green"
         }
         if(!senha.value.match(espe)){
-            document.getElementById("mc").style.color = "red"
+            document.getElementById("mc").style.color = "yellow"
         }else{
             document.getElementById("mc").style.color = "green"
         }

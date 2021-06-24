@@ -147,30 +147,27 @@ function loginUser($conn,$user,$senha){
         exit();
     }
 }
-  function campovazio($titulo,$categoria,$descricao,$subcategoria){
-    $result="";
-    if(empty($titulo) || empty($categoria) || empty($descricao) || empty($subcategoria) !== false){
-        $result = true;
-    }else{
-        $result = false;
-    }
-    return $result;
-  } 
+//   function campovazio($titulo,$categoria,$descricao,$subcategoria){
+//     $result="";
+//     if(empty($titulo) || empty($categoria) || empty($descricao) || empty($subcategoria) !== false){
+//         $result = true;
+//     }else{
+//         $result = false;
+//     }
+//     return $result;
+//   } 
   
-  function guardaPedido($conn,$titulo,$categoria,$descricao,$subcategoria,$anexar,$orcamento){
+  function guardaPedido($conn,$titulo,$categoria,$descricao,$subcategoria,$cara,$anexar,$orcamento){
       $sql="INSERT INTO pedido(titulo,categoria,descricao,suB,pedidoUser,anexo,orcamento) VALUES (?,?,?,?,?,?,?);";
       $stmt= mysqli_stmt_init($conn);  
       if(!mysqli_stmt_prepare($stmt,$sql)){
         header("location: ../pedido.php?error=stmtfalho");
         exit();
       }  
-      session_start();
-      $cara= $_SESSION["useruid"];
-      mysqli_stmt_bind_param($stmt,'sssssss',$titulo,$categoria,$descricao,$subcategoria,$cara,$anexar,$orcamento);
+      mysqli_stmt_bind_param($stmt,"sssssss",$titulo,$categoria,$descricao,$subcategoria,$cara,$anexar,$orcamento);
       mysqli_stmt_execute($stmt);
       mysqli_stmt_close($stmt);
       
-
       header("location: ../dashboard.php");
       exit();
     }
@@ -199,7 +196,7 @@ function emptyOrca($orcaEmpresa){
     }
     return $result;
 }
-function mudaStatus($conn,$status){
+function mudaStatus($conn,$status,$cod){
     
     $sql = "UPDATE orcamento SET status = ? WHERE idOr = ?;";
     $stmt = mysqli_stmt_init($conn);
@@ -208,7 +205,7 @@ function mudaStatus($conn,$status){
         exit();
     }
     
-    mysqli_stmt_bind_param($stmt, "ss", $status,$cod);
+    mysqli_stmt_bind_param($stmt,"ss", $status,$cod);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 

@@ -3,7 +3,9 @@
     include("includes/dbh.inc.php");
     $nome= strval($_SESSION["useruid"]);
     
+    // $sql="SELECT * FROM pedido WHERE  pedidoUser = '$nome';";
     $sql="SELECT * FROM orcamento,pedido WHERE (idOr LIKE Peid) AND pedidoUser = '$nome' AND status = 'Recebido';";
+
     $stmt=mysqli_stmt_init($conn);
     $con= mysqli_query($conn,$sql) or die(mysqli_error($conn));
     $_SESSION['telefone']=$ph=5511910206964;
@@ -56,9 +58,12 @@
             left: -10px;
         }
         footer{
-            bottom: -200px;
+            bottom: -500px;
             overflow-x: hidden;
             overflow-y:hidden;
+        }
+        #meio{
+            height:230px;
         }
     </style>
     
@@ -115,19 +120,18 @@
         <?php 
         echo "<h6 style='margin-left:585px; font-size:20px;' id='tituloOrcamento'>Orçamentos recebidos</h6>";
         echo "<div  id='meio' style='color:white;'><tr ><td >Enviado por:".$dado["userOR"]."</td> <br>";
-        echo "<td >Valor:$".$dado['orca']."</td>";
+        echo "<td >Valor:$".$dado['orca']."</td><br>";
+        echo "<td style='position:relative; margin-bottom:10px;' >Descrição:".$dado['descricao']."</td>";
         echo "<a style='position:absolute; top:25px;left:175px;' href='detalhes.php?codigo=$dado[Peid]'>
             
-        <img src='../imagens/Vector.png' style='position:absolute; left:0px; top:30px;' id='imgVetor'>       
-        <img style='position:absolute; left: 90px; top:90px; height: 50px;' src='../imagens/ant-design_plus-circle-outlined.png' id='plusImg'>
-
+        <img src='../imagens/Vector.png' style='position:absolute; left:0px; top:80px;' id='imgVetor'>       
+        <img style='position:absolute; left:60px; top:130px; height: 50px;' src='../imagens/ant-design_plus-circle-outlined.png' id='plusImg'>
     </a></div>";
             
         echo " </tr><br>";
         
         
         ?>
-        
             
     
     

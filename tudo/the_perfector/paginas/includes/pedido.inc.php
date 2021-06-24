@@ -13,16 +13,19 @@ if (isset($_POST["submit"])){
     require_once 'functions.inc.php';
 
     
-  if(campovazio($titulo,$categoria,$descricao,$subcategoria) !== false){
-        header("location: ../pedido.php?error=Campovazio");
-        exit();
-    }   
-    else{
-        header("location: ../dashboard.php");
-        exit();
-    }
+//   if(campovazio($titulo,$categoria, $subcategoria,$descricao) !== false){
+//         header("location: ../pedido.php?error=Campovazio");
+//         exit();
+// //     }   
+//     else{
+//         header("location: ../dashboard.php");
+//         exit();
+//     }
    
-    guardaPedido($conn,$titulo,$categoria,$descricao,$subcategoria,$anexar,$orcamento);
+    session_start();
+    $cara= $_SESSION["useruid"];
+    //  guardaPedido($conn,$titulo,$categoria,$descricao,$cara,$subcategoria,$anexar,$orcamento);
+    guardaPedido($conn,$titulo,$categoria,$descricao,$subcategoria,$cara,$anexar,$orcamento);
    // guardaOrcamento($conn,$orcamento);
   }
 

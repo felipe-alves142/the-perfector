@@ -6,8 +6,7 @@
     $stmt= mysqli_stmt_init($conn);
     $query= mysqli_query($conn,$sql) or die(mysqli_error($conn));
     require_once "includes/functions.inc.php";
-    session_start();
-    $_SESSION['co']=$codigo;
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +38,7 @@
          <?php echo $dado['orcamento'];?>
           <br> <br>
          <?php     
-             echo "<a href='https://web.whatsapp.com/send?phone= $_SESSION[telefone];' target='blank'><img id='chat' src='../imagens/cha.png'></a>";
+             echo "<a href='https://web.whatsapp.com/send?phone= 5511949414568;' target='blank'><img id='chat' src='../imagens/cha.png'></a>";
 ?>
    </div>
         
